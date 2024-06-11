@@ -1,0 +1,19 @@
+Issuing network,BIN ranges,Active,Length
+American Express,"34, 37",Yes,15
+Bankcard,"5610, 560221-560225",No,16
+China UnionPay,62,Yes,"16-19"
+Diners Club Carte Blanche,"300-305",Yes,14
+Diners Club enRoute,"2014, 2149",No,15
+Diners Club International,36,Yes,14
+Diners Club United States & Canada,"54, 55",Yes,16
+Discover Card,"6011, 622126-622925, 644-649, 65",Yes,16
+InterPayment,636,Yes,16
+InstaPayment,"637-639",Yes,16
+JCB,"3528-3589",Yes,16
+Laser,"6304, 6706, 6771, 6709",No,"16-19"
+Maestro,"50, 56-58, 6",Yes,"12-19"
+MasterCard,"2221-2720, 51-55",Yes,16
+Solo,"6334, 6767",No,"16, 18, 19"
+Switch,"4903, 4905, 4911, 4936, 564182, 633110, 6333, 6759",No,"16, 18, 19"
+Visa,4,Yes,"13, 16, 19"
+UATP,1,Yes,15

@@ -1,0 +1,8 @@
+Continent Name,Population,Area (sq km),GDP (Billion USD),Population Density (per sq km),Largest City,Major Languages,Climate Type
+Asia,4600000000,44579000,30000,103.0,Tokyo,"Mandarin, Hindi, Japanese",Diverse
+Africa,1300000000,30370000,2500,43.0,Lagos,"Arabic, Swahili, English",Tropical and Subtropical
+Europe,750000000,10180000,21000,74.0,Moscow,"Russian, German, French",Temperate
+North America,580000000,24709000,23000,23.0,Mexico City,"English, Spanish, French",Varied
+South America,430000000,17840000,4200,24.0,Sao Paulo,"Portuguese, Spanish",Tropical
+Australia,40000000,7692000,1500,0.5,Sydney,English,Arid and Temperate
+Antarctica,1000,14000000,0,7e-05,N/A,N/A,Polar
