@@ -55,7 +55,6 @@ def _get_script_params():
                             # "configs/agent_configs/react_agent_genai_GeminiProVision.yaml"
                             required=False, type=str)
         parser.add_argument('--open_path_img',
-                            default="http://115.236.22.155:14100/",
                             type=str)
         parser.add_argument('--output',
                             help='Output path of evaluation results',

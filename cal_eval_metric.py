@@ -12,21 +12,21 @@ def clean_json_str(json_str):
     if json_str is None:
         return None
     try:
-        # 替换元组为列表
+        # Replace tuples with lists
         json_str = re.sub(r'\(([^()A-Z*/+-]+)\)', r'[\1]', json_str)
 
-        # 确保 JSON 字符串中的 key 和 value 使用双引号
-        json_str = re.sub(r'(?<!\\)"', '\\"', json_str)  # 先转义所有双引号
-        json_str = re.sub(r'(?<!")"(?!")', '"', json_str)  # 还原之前转义过的正确的双引号
-        json_str = json_str.replace('\\"', '"')  # 去掉多余的转义符
+        # Ensure that keys and values in the JSON string use double quotes
+        json_str = re.sub(r'(?<!\\)"', '\\"', json_str)  # Escape all double quotes
+        json_str = re.sub(r'(?<!")"(?!")', '"', json_str)  # Restore correctly escaped double quotes
+        json_str = json_str.replace('\\"', '"')  # Remove unnecessary escape characters
 
-        # 处理bool值
+        # Handle boolean values
         json_str = json_str.replace("True", "true").replace("False", "false")
 
-        # 为缺少引号的值添加引号
+        # Add quotes to values missing them
         json_str = re.sub(r'(":\\s*)([a-zA-Z]+)(?=\\s*,|\\s*})', r'\\1"\\2"', json_str)
 
-        # 删除非法的逗号
+        # Remove illegal commas
         json_str = re.sub(r',\s*([}\]])', r'\1', json_str)
         tmp = json.loads(json_str)
     except Exception as e:
