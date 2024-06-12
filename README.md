@@ -20,6 +20,12 @@ BabelBench
 
 # Dataset
 
+## Example
+![Data Example](framework.png)
+
+## Model Perforamnce
+![Model Performance](Model%20Perf.png)
+
 ## Files
 The dataset includes the following files:
 - `data/benchmark_random100.csv`: The CSV file containing the questions, annotations and the meta information.
