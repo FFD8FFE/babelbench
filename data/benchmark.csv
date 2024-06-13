@@ -1,0 +1,3644 @@
+﻿tag,prompt,imgs,imgs_src,attachments,attachments_src,prompt_type,eval_info,difficulty
+DS Related,"Please calculate the Pearson correlation coefficients between BMI and cholesterol, and between BMI and hyperglycemia, respectively, and perform a statistical significance test (two-tailed test) to determine whether there is statistical significance (alpha = 0.05).
+
+You should return both the correlation score and the significance score. The answer should have 4 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""correlation_cholesterol"": your_answer,
+  ""significance_cholesterol"": your_answer,
+  ""correlation_hyperglycemia"": your_answer,
+  ""significance_hyperglycemia"": your_answer,
+}
+```",[],[],['cardiovascular_disease_data.csv'],Not Provided,Freeform,"{
+   ""correlation_cholesterol"": {
+             ""gt_answer"": 0.1463, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"",
+             ""tolerance"": 0.0001},
+   ""significance_cholesterol"": {
+             ""gt_answer"": 0.0000, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""},
+   ""correlation_hyperglycemia"": {
+             ""gt_answer"": 0.1014, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"",
+             ""tolerance"": 0.0001},
+   ""significance_hyperglycemia"": {
+             ""gt_answer"": 0.0000, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""}}",Easy
+DS Related,"Develop a Logistic Regression Model to forecast the diagnosis based on the other features. Identify the top 2 features that contribute the most to the diagnosis prediction. 
+
+Calculate the BLEU score between the names of these two feature. The answer should have 2 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""bleu"": your_answer
+}
+```",[],[],['Breast_cancer.csv'],Not Provided,Freeform,"{
+   ""bleu"": {
+             ""gt_answer"": 0, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+DS Related,"Please identify the students whose average CGPA exceeds the solution to the equation 3x^2+12x-6=0, and who have scored over 320 on the GRE and over 110 on the TOEFL. Additionally, check if these students have a university rating of at least 4, a research experience score of 1, and a probability of admission greater than 0.8.
+
+The answer can only be one of ""Yes"" or ""No"", indicating that these students meet/do not meet these conditions.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",[],[],['Admission_Predict_Ver1.1.csv'],Not Provided,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""No"",""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+DS Related,"Please focus on the papers published in the same year as the one shown in the figure, which are from the source 'biorxiv' and under the 'biorxiv' license. Count how many times the term ""Covidence"" appears in the titles of these papers.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""n_occurrence"": your_answer,
+}
+```",['0_4_0.png'],[],['metadata.csv'],Not Provided,Freeform,"{
+   ""n_occurrence"": {
+             ""gt_answer"": 0,""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+DS Related,"Alex was born in the first leap year after 2014 and on a date that only occurs in leap years. His farther bought 1 BTC at the opening price when Alex was born, and sold it at the closing price on Alex's next birthday. The attached file shows the prices of BTC during 2014 and 2020. How much did Alex's farther make from this investment? Round the result to two decimal places. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",[],[],['YAHOO-BTC_USD_D.csv'],https://github.com/InfiAgent/InfiAgent/blob/main/examples/DA-Agent/data/da-dev-tables/YAHOO-BTC_USD_D.csv,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 8166.07, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+DS Related,"The password is considered strong if it satisfies all of the following conditions:
+- It is between 6 and 20 characters long.
+- It includes at least one lowercase letter, one uppercase letter, and one digit.
+- It does not contain three consecutive identical characters (e.g., ""Baaabb0"" is weak, but ""Baaba0"" is strong).
+Assuming the initial password is set as the name of the employee who earned the highest total compensation (TotalPay) in 2011 according to a CSV file, determine the minimum number of steps required to make the password strong. If the password is already strong, return 0.
+In each step, you can:
+- Insert a character into the password,
+- Delete a character from the password, or
+- Replace one character in the password with another character.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""n_step"": your_answer,
+}
+```",[],[],['Salaries.csv'],Not Provided,Freeform,"{
+   ""n_step"": {
+             ""gt_answer"": 2, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+DS Related,"Use visualization tools to observe the changing trends of average annual precipitation. Which of the following is correct:
+A. Precipitation has fluctuated in recent years, but there is no obvious upward or downward trend.
+B. Precipitation has fluctuated in recent years, with an obvious upward trend.
+C. Precipitation has fluctuated in recent years, with an obvious downward trend.
+D. There has been no fluctuation in precipitation in recent years.
+
+The answer can only be one of ""A"", ""B"", ""C"" or ""D"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",[],[],['Fort Necessity NB.csv'],Not Provided,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""B"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+DS Related,"Perform an ANOVA analysis on the spatial data in the attached CSV file to determine if there is a significant difference in the area of new residential buildings across different regions. You should use ""square_footage"" as an indicator of the area of new residential buildings and group this data by ""borough"".
+
+Then, given a string s and a character c, calculate the total number of substrings in s that start and end with the character c.
+s = "" ANOVAANOVAANOVAANOVA""
+c = 'O' if there is a significant difference, otherwise 'A'
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""n_substring"": your_answer
+}
+```",[],[],['Active_Construction.csv'],Not Provided,Freeform,"{
+   ""n_substring"": {
+             ""gt_answer"": 6, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+DS Related,"Find the smallest positive integer such that the number of 1s in its binary representation must be a prime number. 
+
+Then from the table, calculate the maximal number of hits among the players who are eligible for free agency and have number of errors equal to the integer we just found above. 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""max_hits"": your_answer,
+}
+```",[],[],['baseball_data.csv'],https://github.com/InfiAgent/InfiAgent/blob/main/examples/DA-Agent/data/da-dev-tables/baseball_data.csv,Freeform,"{
+   ""max_hits"": {
+             ""gt_answer"": 163, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+DS Related,"""-.. . ..-. / ... ..- --  - .-- ---  -. ..- -- -... . .-. ... -.--. .- --..-- / -... -.--.- ---...  / / / / .-. . - ..- .-. -. / .- / .-.-. / -..."" Decipher this code according to the csv, then tell me what I get if the input is 2 and 3?
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""decode_res"": your_answer,
+}
+```",[],[],['morse_code.csv'],Not Provided,Freeform,"{
+   ""decode_res"": {
+             ""gt_answer"": 5, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+DS Related,"Please perform a time series analysis as follows: Convert the ""Date"" column to a time format (e.g., 2014/1/1) and analyze the GDP trend. Additionally, assess the trend in total monthly electricity consumption (""MonthElectricity""), which is based on the ""Date"" column, to identify any recurring patterns. Choose the appropriate option:
+A. Electricity consumption displays a general upward trend, though it is subject to fluctuations.
+B. Electricity consumption exhibits a clear downward trend with noticeable consistency.
+C. Electricity consumption shows minor fluctuations.
+D. Electricity consumption experiences severe fluctuations.
+
+Please choose the correct sequence based on the answer to the question above and compute the result using Reverse Polish Notation.:
+A. [""12"", ""7"", ""19"", ""13"", ""+"", ""-71"", ""/"", ""27"", ""+"", ""15"", ""+""]
+B. [""5"", ""2"", ""-"", ""32""]
+C. [""5"", ""21"", ""+"", ""31""]
+D. [""3"", ""14"", ""12"", ""/"", ""+""]
+
+The answer should have 2 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""notation_res"": your_answer,
+}
+```",[],[],['elecnew.csv'],Not Provided,Freeform,"{
+   ""notation_res"": {
+             ""gt_answer"": 12, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.01 
+         }
+}",Hard
+DS Related,"Move the fewest matches to make the equation true. After moving, what are the three numbers in this equation? Use these three numbers as index to find the corresponding three columns in the csv file (columns start counting from 0).
+
+Please calculate whether there is a positive correlation between any two of these three columns (a positive Pearson correlation coefficient means there is a positive correlation). If there is a positive correlation, it is recorded as 1, otherwise it is recorded as 0. Please return the XOR value of the correlation results between any of these three columns.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""xor_res"": your_answer,
+}
+```",['0_12_0.png'],[],['kubetsu_H16.csv'],Not Provided,Freeform,"{
+   ""xor_res"": {
+             ""gt_answer"": 1,""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+DS Related,"Please use optimization modeling methods to optimize a strategy that can improve game scores based on the game event type (EVENTMSGTYPE) and the frequency of various events. Which of the following is correct?
+1. **Reduce the frequency of event type 1**: Improve the hit rate by increasing the number of effective shots, such as by improving the player's shooting skills and selecting better shooting positions. 
+2. **Optimize the execution of event type 3**: This may involve paying more attention to the improvement of free throw skills in training so that players can more effectively use free throw opportunities to score in games. 
+3. **Reduced event types 12, 13, and 18**: Although they are more frequent, being better at avoiding them can also help improve your score.
+
+The answer can only be one of ""1"", ""2"" or ""3"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",[],[],['0020900313.csv'],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""2"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Logic Reasoning,"Among the games released after 2000, which two companies have the highest total global sales of games? Is the relationship between their sales consistent with the image?
+
+The answer can only be one of ""Yes"" or ""No"" indicating consistency or inconsistency.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['1_1_0.png'],['自己手绘'],['vgsales.csv'],https://www.kaggle.com/datasets/gregorut/videogamesales,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""No"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Logic Reasoning,"First, as shown in the picture, there is a number on each balloon. Please add the numbers on the balloons belonging to the same color and then find the color of the balloon group with the largest sum. 
+Second, calculate the variance of the array corresponding to this color based on:
+{
+'red': [33.3, 61.2, 85.4, 69.2],
+'blue': [1, 2, 9, 82, 107],
+'yellow': [10231, 345, 21, 5123, 928]
+}
+
+The answer should have 2 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""variance"": your_answer,
+}
+```",['1_2_0.png'],['Dalle'],[],Not Provided,Freeform,"{
+   ""variance"": {
+             ""gt_answer"": 2035.76, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.01 
+         }
+}",Easy
+Logic Reasoning,"Which plant in the picture is the raw material for making noodles? If I eat 500g of it today, how many calories have I consumed? You can refer to the csv file I uploaded for calculation, which records the calorie information corresponding to various food raw materials.
+
+The answer should have 2 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""calory"": your_answer,
+}
+```",['1_3_0.png'],['Dalle'],['food_calories.csv'],gpt4,Freeform,"{
+   ""calory"": {
+             ""gt_answer"": 1700, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.01 
+         }
+}",Easy
+Logic Reasoning,"Please analyze the csv file I provided. First, find the most relevant column in the file corresponding to the red box of the image. Then fill in the missing values of that column with the mean of that column. Finally, calculate what the 20% percentile of the column is.
+
+The answer should have 2 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""20_percentile"": your_answer,
+}
+```",['1_4_0.png'],['https://www.nyc.gov/assets/idnyc/images/content/about/idnyc_front.jpg'],['train.csv'],Not Provided,Freeform,"{
+   ""20_percentile"": {
+             ""gt_answer"": 20.00, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.0001 
+         }
+}",Easy
+Logic Reasoning,"What factors caused the changes in the picture? Please calculate the mean value of this factor in the attached file.
+
+The answer should have 2 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""mean"": your_answer,
+}
+```",['1_5_0.png'],['https://as1.ftcdn.net/v2/jpg/02/19/81/96/1000_F_219819663_ZEMCXGkgrNf5N3XqC18BikRQIiQoxMFN.jpg'],['random_locatioin_rating.csv'],GPT4,Freeform,"{
+   ""mean"": {
+             ""gt_answer"": 3.80, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.01 
+         }
+}",Easy
+Logic Reasoning,"Would a rational person choose to go left or right? 
+If you're going left, please left-align the string s=""Bob"" to the length of 5 and fill the remaining whitespace with ""*"". 
+If you're going to the right, please right-align the string s=""Bob"" to the length of 5 and fill the remaining whitespace with ""*"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""aligned_str"": your_answer,
+}
+```",['1_6_0.png'],['手绘'],[],Not Provided,Freeform,"{
+   ""aligned_str"": {
+             ""gt_answer"": ""Bob**"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Logic Reasoning,"Please analyze the location column in the csv file and divide it into three columns: city, state, and country. Then count which country appears the second most times? Is this country the same as the country in the picture?
+
+The answer can only be one of ""Yes"" or ""No"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['1_7_0.png'],['https://canadamap360.com/img/0/canada-on-world-map.jpg'],['BX-Users_mini.csv'],https://www.kaggle.com/code/ruchi798/book-crossing-starter-notebook-and-eda#notebook-container + 处理了下编码问题，进行了数据量删减,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""Yes"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Logic Reasoning,"Suppose `x` is the last digit of the 17-th fibonacci sequence (the first and the second numbers in the sequence are 1, 1), what's name in the grid that `x` corresponds to.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['1_8_0.png'],['https://miro.medium.com/v2/resize:fit:720/format:webp/1*1obRtpavhDDn-pvlHR2pag.png'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""KETU"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""fuzzy""
+         }
+}",Easy
+Logic Reasoning,"Please get the number of occurrences of each animal category in the image (only dogs, cats and birds are considered). Based on the distribution, tell me the information entropy. The information entropy is calculated as: 
+$$H(X)=-\sum_{i=1}^3 p(x_i)\log_2p(x_i)$$, where $p_i$ represents the probability of dogs, cats and birds respectively.
+
+The answer should have 4 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""entropy"": your_answer,
+}
+```",['1_9_0.png'],['https://www.imdb.com/title/tt2709768/mediaviewer/rm2928088064?ref_=ttmi_mi_all_sf_8'],[],Not Provided,Freeform,"{
+   ""entropy"": {
+             ""gt_answer"": 1.4592, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.0001 
+         }
+}",OK
+Logic Reasoning,"Write a Python function that outputs all positive integers less than 50 and the product of the digits equals k, where k is the jersey number of the player who is going to touch the ball first in the image. The integers should be arranged in ascending order and returned as a list. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['1_10_0.png'],['https://cdn2.hubspot.net/hubfs/2891910/Blog%20post%20images/NBA%20Live%20lead%20image.png'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": [6,16,23,32], 
+             ""answer_type"": ""list"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Logic Reasoning,"The color picture I provided contains multiple (255, 0, 0) pixels. Please write code to help me calculate how many pixels of this color there are in the image.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""n_pixel"": your_answer,
+}
+```",['1_11_0.png'],['Dalle'],[],Not Provided,Freeform,"{
+   ""n_pixel"": {
+             ""gt_answer"": 488, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Logic Reasoning,"The frog in the picture jumps up 3 steps. What is the number of the steps? 
+Assuming that the number is recorded as n, please complete the following function to generate a string containing ""$""-delimited numbers starting from 1 up to n inclusive.
+def string_sequence(n: int) -> str: 
+    s = []
+    for i in (1, n+1):
+
+The final answer only contains the string concatenated with ""$"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""res_str"": your_answer,
+}
+```",['1_12_0.png'],['Dalle'],[],Not Provided,Freeform,"{
+   ""res_str"": {
+             ""gt_answer"": ""1$2$3$4$5$6,"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Logic Reasoning,"One day, Mike's 13-year-old son showed him a photo (as provided in the attachment) and told Mike that he wanted to go to that place. How much would the tickets cost for Mike, his wife, and his son to go together? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['1_13_0.png'],['https://assets.simpleviewinc.com/simpleview/image/upload/crm/muskegonmi/L-Muskegon-Musem-of-Art-Minotaur-3-_10ED39C2-5056-A36F-233DD5BD4CB82E6D-10ed32915056a36_10ed570e-5056-a36f-23ef6979cddc4049.jpg'],['ticket_prices.csv'],GPT-4,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 48, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Logic Reasoning,"Write a function that takes an integer n as input and returns a list of length n, which represents a variant of the Fibonacci sequence. In this variant, the first and second numbers are still 0 and 1, respectively, but each subsequent number is the sum of the previous two numbers plus the current index (starting from 0). The function should return the first n elements of this sequence, where n is the number of chairs in the image. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['1_14_0.png'],['DALLE'],[],Not Provided,Freeform,"{
+ ""answer"": {
+ ""gt_answer"": [0,1,2], 
+ ""answer_type"": ""list_of_int"",
+ ""eval_method"": ""exact""
+ }
+}",OK
+Logic Reasoning,"This csv file records the number of daily visits to a certain page in Wikipedia (count column). 
+Please analyze, from Monday to Sunday, which day has the largest number of overall visits? Which animal in the uploaded picture corresponds to this day? 
+
+The answer can only be one of  cat, dog, monkey, bird, elephant, pig and chicken
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""animal"": your_answer,
+}
+```",['1_15_0.png'],['https://m.media-amazon.com/images/I/61fK1mjt6fL._AC_SX679_.jpg'],['wiki_machine_learning.csv'],https://github.com/Yorko/mlcourse.ai/blob/main/data/wiki_machine_learning.csv,Multi-choice,"{
+   ""animal"": {
+             ""gt_answer"": ""cat"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Logic Reasoning,"In the csv file I uploaded, the distribution of the TARGET column is not balanced. Please oversample so that the ratio of minority class majority examples becomes $\alpha$. $\alpha$ is equal to the proportion of the red part in the picture.
+
+Finally, please tell me how many pieces of data there are in the entire data set after oversampling.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""amount"": your_answer,
+}
+```",['1_16_0.png'],['https://p.turbosquid.com/ts-thumb/nw/aJ6qh7/bDV8Ua9B/pie_chart_50_50_contextsig_0000/jpg/1475256519/1920x1080/fit_q99/b818b393d4e6bf7680f50e1b69bd53c66195d758/pie_chart_50_50_contextsig_0000.jpg'],"['HR_comma_sep_test.csv', 'HR_comma_sep_train.csv']",https://www.kaggle.com/datasets/mfaisalqureshi/hr-analytics-and-job-prediction?rvi=1,Freeform,"{
+   ""amount"": {
+             ""gt_answer"": 14418, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",OK
+Logic Reasoning,"Please help me normalize the petal length column in the dataset. You should use MinMaxScaler. The normalized data range is equal to the range corresponding to the red brackets in the picture. Finally, please tell me what the mean of this column is after normalization.
+
+The answer should have 3 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""mean"": your_answer,
+}
+```",['1_17_0.png'],['https://www.uline.com/BL_2037/Rulers'],['IRIS.csv'],https://www.kaggle.com/datasets/arshid/iris-flower-dataset,Freeform,"{
+   ""mean"": {
+             ""gt_answer"": 0.468, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.001 
+         }
+}",OK
+Logic Reasoning,"You need to add or subtract two variables with: operation(var1, var2)
+First, you need to analyze the Kendall correlation coefficient between petal_length and petal_width in the csv file and calculate the p-value.
+Then based on the p value and Kendall correlation coefficient, you can decide the operation: If there is a positive correlation between petal_length and petal_width, then the operation is addition; otherwise, the operation is subtraction.
+Finally, var1 is equal to the Kendall correlation coefficient. var2 is equal to the total number of fingers of that object in the uploaded image.
+Please tell me what operation(var1, var2) is equal to?
+
+The answer should have 4 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""operation_res"": your_answer,
+}
+```",['1_18_0.png'],['https://sesameworkshop.org/wp-content/uploads/2023/03/presskit_ss_bio_bert-560x420.png'],['IRIS.csv'],https://www.kaggle.com/datasets/arshid/iris-flower-dataset,Freeform,"{
+   ""operation_res"": {
+             ""gt_answer"": 8.803, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.0001 
+         }
+}",OK
+Logic Reasoning,"What is the common fruit in these three pictures? Please combine it with the csv I uploaded to determine how many calories it has.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""calory"": your_answer,
+}
+```","['1_19_0.png', '1_19_12.png', '1_19_14.png']","['https://thewhiskaddict.com/wp-content/uploads/2022/05/IMG_8906-scaled.jpg', 'https://www.followfreshfromflorida.com/recipes/florida-watermelon-salad-with-blueberries', 'https://pixnio.com/free-images/2020/08/04/2020-08-04-10-57-29-1536x1024.jpg']",['fruit_calories_expanded.xlsx'],GPT4,Freeform,"{
+   ""calory"": {
+             ""gt_answer"": 30, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.1 
+         }
+}",OK
+Logic Reasoning,"Which of the codes in the first four images will output the content shown in the last image? A. The first image; B. The second image; C. The third image; D. The fourth image. The answer can only be one of ""A"", ""B"", ""C"" or ""D"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```","['1_20_0.png', '1_20_12.png', '1_20_14.png', '1_20_16.png', '1_20_18.png']",['自制'],[],Not Provided,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""C"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Logic Reasoning,"Please train a decision tree model based on the csv file. The target variable is 'Good Melon', which indicates whether a watermelon is good (1) or bad (0). Then predict whether the watermelons in the uploaded images are good based on this model. The form of your answer should be: [1/0,1/0], which means that the melons in the first picture and the second picture are good melons (1) and bad melons (0) respectively.
+
+The answer can only be one of ""1"" or ""0"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""melon1"": your_answer,
+  ""melon2"": your_answer,
+}
+```","['1_21_0.png', '1_21_12.png']","['https://www.pngitem.com/middle/JbhoTR_watermelon-hd-png-download/', 'https://www.baike.com/wikiid/7267793638536773643']",['watermelons.csv'],GPT-4,Multi-choice,"{
+   ""melon1"": {
+             ""gt_answer"": ""1"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         },
+   ""melon2"":{
+             ""gt_answer"": ""0"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }}",OK
+Logic Reasoning,"The uploaded file documents employee satisfaction with their jobs. If the satisfaction_level column is greater than or equal to 0.5, it means satisfaction (recorded as 1), and if it is less than 0.5, it means dissatisfaction (recorded as 0).
+Please use the Decision Tree algorithm to train a classifier based on the training data to predict the satisfaction_level column. This classifier is then used to predict the results in the test set.
+Please calculate whether most consumers in the test set are satisfied or dissatisfied. Which part of the picture do they correspond to?
+(A) Blue part. (B) Red part.
+
+The answer can only be one of ""(A)"" or ""(B)"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['1_22_0.png'],['https://as1.ftcdn.net/v2/jpg/04/72/73/14/1000_F_472731465_rIbl4n4x5TTn17Qzk4gYgEpY5ultOIwu.jpg'],"['HR_comma_sep_test.csv', 'HR_comma_sep_train.csv']",https://www.kaggle.com/competitions/santander-customer-satisfaction/data,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""(B)"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Logic Reasoning,"Assuming that R represents red and B represents blue, please determine whether there is more red or blue in the following string:
+RBRBBBBRRBRBBBRBRRBBBRRRRBRBBBBBBBBRBBBBBBRBRBRRRRRBBBBBBBB
+If I take the arrow corresponding to this color as the starting point and the green arrow as the end point, can I walk from the starting point to the end point in the maze shown in the picture?
+
+The answer can only be one of ""Yes"" or ""No"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['1_23_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Maze_simple.svg/440px-Maze_simple.svg.png'],[],Not Provided,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""No"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Logic Reasoning,"The table shows the heating speeds of  a microwave oven for heating water from room temperature to the boiling point. If I want to finish heating 1 liter of water within the time shown in the image, what power level should I set? The answer can only be one of ""600W"", ""800W"", ""1000W"" or ""1200W"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['1_24_0.png'],['https://www.foodandwine.com/thmb/--5ug4vAt-CZ50zUejvn62SaukU=/fit-in/1500x3335/filters:no_upscale():max_bytes(150000):strip_icc()/FAW-Panasonic_CyclonicWaveInverter_5-RussellKilgore-0210-fa6d0e95e5ea4784ade8ed59a2e9a678.jpg'],['microwave_heating_speeds.csv'],GPT-4,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""1200W"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Logic Reasoning,"The image shows an image of a peak period on a certain day. It is known that the peak period belongs to one of morning peak or evening peak. Please combine the information in the attached csv file to deduce the time period (represented by hours) to which the peak period belongs.
+
+Please select the value of the hour column as your answer.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""time_period"": your_answer,
+}
+```",['1_25_0.png'],['https://ca-times.brightspotcdn.com/dims4/default/a84be6e/2147483647/strip/true/crop/2048x1297+0+0/resize/1200x760!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F61%2Fd3%2F095faa51ad0015f4b95fc3db16c0%2Fla-me-ln-los-angeles-traffic-the-worst-again-2-002'],['traffic_volume_data.csv'],GPT4+手动修改数值,Freeform,"{
+   ""time_period"": {
+             ""gt_answer"": ""9"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Logic Reasoning,"The csv file is a piece of traffic flow data, which records the number of vehicles passing on a highway every 5 minutes. It contains two columns: timestamp (timestamp, format is YYYY-MM-DD HH:MM) and vehicle_count (number of vehicles) ).
+Please first determine the time shown in the picture, and extract the data after that time from the traffic flow data. Then, use the Isolation Forest algorithm to detect outliers in these traffic data. Please return the mean of all outliers.
+
+The answer should have 2 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""mean"": your_answer,
+}
+```",['1_26_0.png'],['https://www.historyhit.com/app/uploads/bis-images/5154061/BigBen-1576x1074.jpg'],['traffic_data.csv'],自动生成,Freeform,"{
+   ""mean"": {
+             ""gt_answer"": 117.5, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.01 
+         }
+}",Hard
+Logic Reasoning,"Please judge whether the following code fulfills this requirement: draw a button with the color that the graphic at the ""?"" in the picture should have.
+<head>
+    <style>
+        .my-button {
+            background-color: #6a0dad; /* 紫色背景 */
+            color: white; /* 白色文字 */
+            padding: 10px 20px; /* 内边距：上下10px，左右20px */
+            border: none; /* 无边框 */
+            cursor: pointer; /* 鼠标悬停时为指针形状 */
+            font-size: 16px; /* 文字大小 */
+            border-radius: 5px; /* 圆角边框 */
+        }
+    </style>
+</head>
+
+The answer can only be one of ""Yes"" or ""No"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['1_27_0.png'],['自己手绘'],[],Not Provided,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""Yes"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Logic Reasoning,"If the pictures I uploaded are spliced together from left to right and top to bottom, what shape will I get?
+(A) Heart (B) Square (C) Circle
+
+For the string corresponding to this shape, please write code to convert each character into its corresponding ASCII code value, and calculate the sum of these ASCII code values.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""sum_of_ascii"": your_answer,
+}
+```","['1_28_0.png', '1_28_12.png', '1_28_14.png', '1_28_16.png']","['https://blogbystean.com/wp-content/uploads/2023/01/Watermelon-Green-Apple-Salad-20012023-4.jpg', 'https://blogbystean.com/wp-content/uploads/2023/01/Watermelon-Green-Apple-Salad-20012023-4.jpg', 'https://blogbystean.com/wp-content/uploads/2023/01/Watermelon-Green-Apple-Salad-20012023-4.jpg', 'https://blogbystean.com/wp-content/uploads/2023/01/Watermelon-Green-Apple-Salad-20012023-4.jpg']",[],Not Provided,Freeform,"{
+   ""sum_of_ascii"": {
+             ""gt_answer"": 500, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Logic Reasoning,"Will the shot be blocked in the image? If yes, tell me the output of the code shown in the second image. Otherwise tell me the output of the code shown in the third image. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```","['1_29_0.png', '1_29_12.png', '1_29_14.png']","['https://www.soulshepherding.org/wp-content/uploads/2013/02/the-winning-shot.jpg', 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-az0rDX6YGuH8ktZwbkKKbQI27LbE8ziBIhD9jbtHq1t97uzqNuhd7zwyQoEcRwCeH0b9qsEBWDZkOJz0H366uZ64UMRyWymgiC0WIQ1q98JroV1KAPl_k7Ez-68K4rHGZsgybnHckyA/s1600/1.PNG', 'https://stackify.com/wp-content/uploads/2023/05/image-4.png']",[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": [1,4,9,16], 
+             ""answer_type"": ""list"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Logic Reasoning,"Make an equation by inserting +, - and = into three of the five spaces between the digits in the image. Each symbol can only be used once. Don't change the positions of the digits. The equation is?
+
+The answer is a string with no space between digits/symbols. 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['1_30_0.png'],['自制'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": [""48-33=6+9"", ""48-3=36+9""], 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""either_ok""
+         }
+}",Hard
+Logic Reasoning,"Find the answers to the 3 reasoning tasks in the figure. Then, concat the 3 answers and treat it as a base-17 number. Find the closest prime number to the number. You should reply me with a number in the base-16 format.
+
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['1_31_0.png'],['http://www.chinagwy.org/files/20200604153409_43661.png'],[],Not Provided,Freeform,"{
+ ""answer"": {
+ ""gt_answer"": ""E3B"", 
+ ""answer_type"": ""str"",
+ ""eval_method"": ""exact""
+ }
+}",Hard
+Logic Reasoning,"In one of the given images, there is one grid marked as ""?"" for missing component, please select a component from the other images (from option  A to F) to fill in the blank. We define the value of outter shape: circle to be 0, triangle to be 1, square to be 2. And for the inner shape, we define the value of a solid small circle to be 3, a cross to be 4, and if nothing's there, we consider the value to be 0. 
+
+Now, please return your option, and the total value of your inner and outer shape. The final answer should follow the JSON format with the following schema 
+```json 
+{
+  ""missing_component"": your_answer, # can only be one of A~F
+  ""total_value"": your_answer
+}
+```","['1_32_0.png', '1_32_12.png']","['https://www.mensa.org/public/mensa-iq-challenge', 'https://www.mensa.org/public/mensa-iq-challenge']",[],Not Provided,Freeform,"{
+   ""missing_component"": {
+             ""gt_answer"": ""F"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         },
+   ""total_value"": {
+             ""gt_answer"": ""1"", 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }}",Hard
+Logic Reasoning,"In one of the given images, there is one grid (out of 9 total) marked as ""?"" for a missing component. Please find the pattern from the other 8 grids, and select a proper component for the blank from the other image (from option A to F). Consider A=1, B=2, C=3, D=4, E=5 and F=6, based on your option, please find the [your-option]-th prime number, finally return your option and the prime number.
+
+The final answer should follow the JSON format with the following schema 
+```json 
+{
+  ""missing_component"": your_answer, # can only be one of A~F
+  ""prime_number"": your_answer
+}
+```","['1_33_0.png', '1_33_12.png']","['https://www.mensa.org/public/mensa-iq-challenge', 'https://www.mensa.org/public/mensa-iq-challenge']",[],Not Provided,Freeform,"{
+   ""missing_component"": {
+             ""gt_answer"": ""D"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         },
+   ""prime_number"": {
+             ""gt_answer"": ""7"", 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }}",Hard
+Color,"According to the most and least favored colors (by counts) of the top popular brand (by rating), is there a product in the image matches the description?
+
+Please answer an integer for the location of the product counting from left to right (index starts from 1 to 5). If you cannot find a matching product, return -1. 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""location"": your_answer,
+}
+```",['2_1_0.png'],['https://image.coolblue.be/840x473/content/2ef8f533ceb23d37b9eec5e16cb76948'],['Fitness_trackers_updated.csv'],https://www.kaggle.com/datasets/devsubhash/fitness-trackers-products-ecommerce,Multi-choice,"{
+   ""location"": {
+             ""gt_answer"": 5,""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Color,"What is the total sale price of the iPhones with colors matching the zebra in the provided image. The sale price data is provided in the dataset. 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['2_2_0.png'],['https://i.pinimg.com/originals/38/28/7a/38287ae16c73c84a0157f83328628723.jpg'],['apple_products.csv'],https://www.kaggle.com/datasets/komalkhetlani/apple-iphone-data,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 1360984, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Color,"Which habitat, according to the dataset, is the most probable origin of the fishes in the image?
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{ 
+  ""origin"": your_answer, 
+}
+```",['2_3_0.png'],['https://fisharoma.com/wp-content/uploads/2019/07/Comet-Goldfish_Feature-Image.jpg'],['fish_data.csv'],https://www.kaggle.com/datasets/stealthtechnologies/predict-lifespan-of-a-comet-goldfish/,Freeform,"{
+   ""origin"": {
+             ""gt_answer"": ""lakes"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Color,"For the state that has the most educated people as shown in the table, which color does it belong to in the image? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": color,
+}
+```
+where color should be in lower case.",['2_4_0.png'],['https://i.pinimg.com/originals/f6/74/8e/f6748eb7e737d145d1fa8261d8449d11.gif'],['us_states_statistics.csv'],GPT 生成,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""green"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Color,"Please sort the name of the colors in the rainbow image by reverse alphabetical order. Return a list of strings. 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['2_5_0.png'],['https://thumb.ac-illust.com/15/15eb0de0820751f7836fd6fe4e493106_w.jpeg'],[],Not Provided,Freeform,"{
+ ""answer"": {
+ ""gt_answer"": [""Yellow"", ""Red"", ""Orange"", ""Green"", ""Blue""], 
+ ""answer_type"": ""list_of_str"",
+ ""eval_method"": ""exact""
+ }
+}",Easy
+Color,"In the image, there are three circles with different colors. One color can be obtained by mixing the other two colors (approximately). Translate the RGB values of this color to hexadecimal color code. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": color_code,
+}
+```
+where the color code should be in the string format.",['2_6_0.png'],['https://isfdn.org/core/files/isfdn/uploads/images/Analgous%20colors%20blue%20green%20yellow.png'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""#00FF00"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Color,"The image shows the flame reaction of three different metals. Some properties of the three metals as well as some more metals are presented in the csv file. Please determine if the atomic numbers of the three metals can form a triangle. The answer can only be ""Yes"" or ""No"". Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['2_7_0.png'],['https://www.thoughtco.com/thmb/nF2DVvkUfbhB3hymElqwlzyMmtg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/90191671-56a1322a3df78cf772684fbf.jpg'],['updated_metal_properties.csv'],gpt 生成,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""Yes"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Color,"Based on the given image and table, which color of thermometer is most likely to represent the normal temperature of a species listed in the table, and what is the corresponding species? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": [color, species],
+}
+```
+where color and species are all in lower cases.",['2_8_0.png'],['https://i.pinimg.com/736x/6c/60/bd/6c60bdd9985793e4d0c7a52b310ea96a.jpg'],['biological_normal_temperature_ranges_updated.csv'],GPT 生成,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": [""red"", ""chicken""], 
+             ""answer_type"": ""list_of_str"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Color,"I want to buy a birthstone for my mom for her 65th birthday. Please recommend which stone in the image to buy, based on 
+1. the column ""item purchased"" in the dataset for jewelry, don't based on the ""category"" column 
+2. the most popular jewelry color of women in their 60th 
+
+The answer should be an integer indicating the location of the stone in the image counting from the left to the right in the diagonal (index starts from 1 to 6). If it's the bottom left stone, return -1. 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{ 
+  ""location"": your_answer, 
+} 
+```",['2_9_0.png'],['https://cdn.shopify.com/s/files/1/0042/8438/3318/products/Np7_ee5dcbce-5be2-4371-813e-a8aefda01e98.jpg'],['shopping_trends_updated.csv'],https://www.kaggle.com/datasets/iamsouravbanerjee/customer-shopping-trends-dataset,Multi-choice,"{
+   ""location"": {
+             ""gt_answer"": 4, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Color,"First find the most recommended product. Then, for all the customers who recommended this product, identify their most common hair color. Last, identify the hair colors in the image and answer which one is closest to the most common hair color identified above. 
+
+Answer the location of the hair color in the image, counting from the left.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""location"": your_answer,
+}
+```",['2_10_0.png'],['https://www.yourtango.com/sites/default/files/display_list/hair-color-trends-2022.jpg'],['review_1250_processed.csv'],https://www.kaggle.com/datasets/nadyinky/sephora-products-and-skincare-reviews,Multi-choice,"{
+   ""location"": {
+             ""gt_answer"": 3,""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Color,"Examine the pie chart provided in the image and write a program to identify the category whose spending is closest to the average of all categories. Output the corresponding color of this category in the chart.
+
+The answer should be a string from one of the following: grey, blue, pink, light green, yellow. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['2_12_0.png'],['https://cdn1.byjus.com/wp-content/uploads/2021/03/pie-chart.png'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""light green"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Color,"For cars with exterior coloring matching the color of the rose in the given image, what is the average price of the most popular interior color. 
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['2_13_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Blue_rose-artificially_coloured.jpg/440px-Blue_rose-artificially_coloured.jpg'],['used_cars.csv'],https://www.kaggle.com/datasets/taeefnajib/used-car-price-prediction-dataset,Freeform,"{
+ ""answer"": {
+ ""gt_answer"": 43837.78, 
+ ""answer_type"": ""float"",
+ ""eval_method"": ""exact""
+ }
+}",OK
+Color,"We say two colors are similar if the Euclidean distance of the RGB tuple of the colors is less than a threshold. Determine if the two colors in the image are similar when threshold is 100. The answer can only be ""Yes"" or ""No"". Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['2_14_0.png'],['https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8XxvBMhRIBoMtTcAgBm-9x7fpkVcjYCUl_dzNdYKkjWsKUS7-gH1umnggxTZqduXjYFGyIAXyTfJTGf7A4Ag7mHvoPV74yvZPBGMZ-_KH3_QXiN5nsGjKYfgBHKcgHOEwY-j5otXzkNsZ/s1600/Canary+Yellow+and+Pink.jpg'],[],Not Provided,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""No"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Color,"What is the color of the geometric object which is shiny? Please generate a 4x4 image filled by this color using Python in the format of Numpy ndarray and return the ndarray. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['2_15_0.png'],['DallE 生成'],[],Not Provided,Freeform,"{
+   ""answer"": {
+     ""gt_answer"": [
+       [[255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0]],
+       [[255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0]],
+       [[255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0]],
+       [[255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0]]
+     ],
+     ""answer_type"": ""np.ndarray"",
+     ""eval_method"": ""exact""
+   }
+}",Hard
+Color,"Find a color from the dataset that ranked in the top two for women's fashion in a certain year between 2010-2018 but was not consistently popular throughout these years. Based on that color and the leading two categories for it during that year, what item from the picture would you suggest as a gift for my mom? 
+
+The answer are in the format {color} {item}. If there are multiple appropriate answers, you can choose only one.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['2_16_0.png'],['https://media.istockphoto.com/id/1063353016/photo/womens-clothes-set-isolated-female-clothing-collage.jpg?s=1024x1024&w=is&k=20&c=EWUawCDAWw1q7udiA_-hGhuyTtgjCbPWGDx39jqsyso='],['styles.csv'],https://www.kaggle.com/datasets/bhavikjikadara/e-commerce-products-images,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": [""pink lipstick"", ""blue top"", ""silver necklace""],""answer_type"": ""str"",
+             ""eval_method"": ""either_ok""
+         }
+}",Hard
+Color,"Based on the species of the coffee plant in the picture and the unroasted bean color, which continent grows this coffee the most based on the dataset? 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{ 
+  ""continent"": your_answer, 
+} 
+```",['2_17_0.png'],['https://m.media-amazon.com/images/I/817dD5VtPiL.jpg'],['merged_data_cleaned.csv'],https://www.kaggle.com/datasets/fatihb/coffee-quality-data-cqi,Freeform,"{
+   ""continent"": {
+             ""gt_answer"": ""North America"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Color,"Are the balls in the picture the same color? If yes, please output the sum of the ASCII codes of ""Yes"". If not, please output the sum of the ASCII codes of ""No"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""sum_of_ascii"": your_answer,
+}
+```",['2_18_0.png'],['https://www.syfy.com/sites/syfy/files/styles/scale_600/public/illusion_colorballs_stripes.jpg'],[],Not Provided,Freeform,"{
+   ""sum_of_ascii"": {
+             ""gt_answer"": 305, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",Hard
+Color,"Given a graph represented by the adjacency matrix.
+```
+graph = [
+    [0, 1, 1, 1],
+    [1, 0, 1, 0],
+    [1, 1, 0, 1],
+    [1, 0, 1, 0]
+]
+```
+Please determine if this graph can be colored with the colors in the image, such that no two adjacent vertices have the same color. The answer can only be ""Yes"" or ""No"". Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['2_19_0.png'],['https://assets-global.website-files.com/64f085b377053e1b637be882/64f458596c346028480a6300_Color-palette-for-website-1.1-1024x576.png'],[],Not Provided,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""Yes"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Color,"According to the dataset, which eye colors in the image correspond to the highest and lowest frequencies? Identify the eyes by their location 1-7 counting  from top left to bottom right. Please return the LOGICAL OR of their locations, the result is in binary format 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['2_20_0.png'],['https://media.istockphoto.com/id/1270550195/vector/human-pupil-eyeball-variations-eye-color-types-illustration.jpg?s=612x612&w=0&k=20&c=_k-qaAHDtGAUj50LbytPxyv-uCduDfNBZgO3rEAuBjc='],['HairEyeColor.csv'],https://www.kaggle.com/datasets/jasleensondhi/hair-eye-color,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 110,""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Color,"The painting guide is as follows: numbers from 21 to 30 should be painted green, 31 to 40 brown, 41 to 50 purple, 51 to 60 pink, 61 to 70 yellow, 71 to 80 orange, 81 to 90 blue, and 91 to 100 red, all others white. Please review all the cells and their corresponding values in the table presented in the image. Are there any cells painted with an incorrect color? If so, how many are inaccurately painted?
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""number_inaccurate"": your_answer,
+}
+```",['2_21_0.png'],['自制'],[],Not Provided,Freeform,"{
+   ""number_inaccurate"": {
+             ""gt_answer"": 3, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Celebrity,"Here is an image of a scientist, what is most likely the research field that this scientist specializes in? Given the attached table, please find the corresponding magic number x according to the research field, and return the x-th number in the Fibonacci sequence. Return your answer using the following json format: 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['3_1_0.png'],"['https://media.newyorker.com/photos/64ba967803ba9998f5c20360/master/w_2240,c_limit/TNY_final_2.jpg']",['scientist-magic-number.csv'],Not Provided,Freeform,"{ ""answer"": { ""gt_answer"": 2584,  ""answer_type"": ""int"", ""eval_method"": ""exact"" }}",Easy
+Celebrity,"Given the table attached, which description presented in the table best describes the man in the image? Based on your choice, find the corresponding magic number x in the table, what is x-th prime number?",['3_2_0.png'],['https://compote.slate.com/images/69422bfb-57d9-4746-b03b-43a7521b39c2.jpeg?crop=1881%2C1254%2Cx0%2Cy0&width=1600'],['description-magic-number.csv'],Not Provided,Freeform,"{ ""answer"": { ""gt_answer"": 11,  ""answer_type"": ""int"", ""eval_method"": ""exact"" }}",Easy
+Celebrity,"Here is an image of a scientist, what is most likely the research field that this scientist specializes in? Given the attached table, please find the corresponding magic number x according to the research field, and return the x-th prime number. Return your answer using the following json format: ```json 
+{
+  ""answer"": your_answer,
+}
+```",['3_3_0.png'],['https://www.thoughtco.com/thmb/PINRs6BuENOQlQppVISNAggpaAc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages_Einstein-3245599-58459dc93df78c0230ef6e3b.jpg'],['scientist2-magic-number.csv'],Not Provided,Freeform,"{ ""answer"": { ""gt_answer"": 59,  ""answer_type"": ""int"", ""eval_method"": ""exact"" }}",Easy
+Celebrity,"What is the combined total of goals scored by the players in the image?
+
+The answer should be an interger. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['3_4_0.png'],['https://pbs.twimg.com/media/ExBzwk6WgAgOw8-?format=jpg&name=large'],['top_scorer.csv'],https://en.wikipedia.org/wiki/List_of_footballers_with_500_or_more_goals,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 3442, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Celebrity,"Write a code to find the least common multiple of the birth years for the two individuals depicted in the images.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['3_5_0.png'],['https://assets3.cbsnewsstatic.com/hub/i/r/2013/04/24/d4b4b578-f266-46c4-b231-607239dcf6d6/thumbnail/1240x930/d1e152b67396115e4084a87ac3923fa7/95811514.jpg?v=55c0f85ebcd2b956528d9c6f5a7e8871'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 3816106, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0 
+         }
+}",Easy
+Celebrity,"How many people in the table were born in the same year as the person shown in the image?
+
+The answer should be an interger. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['3_6_0.png'],"['https://hips.hearstapps.com/hmg-prod/images/justin-bieber-gettyimages-1202421980.jpg?crop=1xw:0.5xh;center,top&resize=1200:*']",['pantheon.csv'],https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/28201,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 4, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Celebrity,"Please read the CSV file and determine the number of downloads for the song performed by the artist shown in the image.
+
+The answer should be an interger. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['3_7_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ed_Sheeran-6886_%28cropped%29.jpg/440px-Ed_Sheeran-6886_%28cropped%29.jpg'],['billboard_downloads_expanded_sample.csv'],GPT4,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 1500000, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Celebrity,"Identify the musical genre of the artists shown in the image and calculate the total number of downloads for this genre by analyzing the CSV file.
+
+The answer should be an interger. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['3_8_0.png'],['https://wirally.com/wp-content/uploads/2022/10/13-october-Greatest-Pop-Singers-of-All-Time.jpg'],['billboard_downloads_expanded_sample.csv'],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 7100000, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Celebrity,"What is the total net worth (in billion dollars) of the four billionaires shown in the image according to the CSV files?
+
+The answer should be a float number. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['3_9_0.png'],['https://cdn01.justjared.com/wp-content/uploads/headlines/2024/01/10-richest-people-in-the-world-revealed.jpg'],['billionaires_list.csv'],https://www.forbesindia.com/article/explainers/top-10-richest-people-world/85541/1,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 680.6, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Celebrity,"Among the top 8 highest-rated movies on IMDB, what is the average IMDB rating of  films featuring the actor?
+
+The answer should be a float number. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['3_10_0.png'],['https://www.imdb.com/name/nm0000008/'],['imdb_ranking.csv'],https://www.imdb.com/chart/top/?ref_=chtbo_ql_3,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 9.1, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Celebrity,"Here is an image of a man. Given the table attached, identify the movie or television series not directed by the man in the image in the table. Find the magic number x in the table corresponding to the movie or the television series, what is the x-th prime number? Return your answer using the following json format: ```json 
+{
+  ""answer"": your_answer,
+}
+```",['3_11_0.png'],['https://www.google.com/url?sa=i&url=https%3A%2F%2Fencrypted-tbn0.gstatic.com%2Flicensed-image%3Fq%3Dtbn%3AANd9GcRZcOW8Ue7SShqrNLZNsrvpoj7sJ3S_BR-Tz5A3j8hTUyW-W3XaCNKCcqVhiQ-IufwPgorEapBr72-CxtU&psig=AOvVaw1m_BL7JygDYhd1Nr4ZDKPd&ust=1711158699402000&source=images&cd=vfe&opi=89978449&ved=0CBIQjhxqFwoTCMDRjIfhhoUDFQAAAAAdAAAAABAE'],['movie-magic-number.csv'],Not Provided,Freeform,"{ ""answer"": { ""gt_answer"": 601,  ""answer_type"": ""int"", ""eval_method"": ""exact"" }}",OK
+Celebrity,"Here is an image of a scientist, what is most likely the research field that this scientist specializes in? Given the attached table, please find the corresponding magic number x according to the research field, and return the smallest prime number that is larger than or equal to x. Return your answer using the following json format: 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['3_12_0.png'],['http://3.bp.blogspot.com/-t63nugHnDDI/UUR2N-Bpq7I/AAAAAAAABHg/ehnuQ_Zxppc/w1200-h630-p-k-no-nu/terrytao+-+terence+tao+-+genius+3+-+Copy.jpg'],['scientist3-magic-number.csv'],Not Provided,Freeform,"{ ""answer"": { ""gt_answer"": 13,  ""answer_type"": ""int"", ""eval_method"": ""exact"" }}",OK
+Celebrity,"What is the year when the man in the image became the president of the US for the first time? Consider the year as x, what is the x-th prime number? Return your answer using the following json format: 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['3_13_0.png'],['https://www.whitehouse.gov/wp-content/uploads/2021/01/44_barack_obama.jpg'],[],Not Provided,Freeform,"{ ""answer"": { ""gt_answer"": 17471,  ""answer_type"": ""int"", ""eval_method"": ""exact"" }}",OK
+Celebrity,"Accoding to the CSV, who is the top scorer in the forth club shown in the image from right to left?
+
+
+The answer should be a string type player name. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['3_14_0.png'],['https://library.sportingnews.com/styles/crop_style_16_9_desktop/s3/2022-06/premier-league-clubs-badges-2022.jpg?itok=19iOHhPF'],['epl_top_20_scorers.csv'],GPT4,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""Pierre-Emerick Aubameyang"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Celebrity,"Based on the pricing information provided in the CSV file, determine the minimum number of days required to rent the movie shown in the image, such that opting for a membership becomes more cost-effective than renting as a non-member. Assume that both members and non-members rent the movie at their respective daily rates provided in the file and the monthly membership cost is $9.99. 
+
+The answer should be an interger. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['3_15_0.png'],['https://m.media-amazon.com/images/I/51sBtK24saL._SX300_SY300_QL70_FMwebp_.jpg'],['enhanced_film_rental_prices.csv'],GPT4,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 5, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Celebrity,"The attached csv lists all the FMVP winners during 2010-2020. For this player's first NBA championship, who won FMVP that year?
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['3_16_0.png'],"['https://i4.hoopchina.com.cn/hupuapp/bbs/352/35992352/1652317557_951816IMG_2230.PNG?x-oss-process=image/resize,w_600/format,jpg/quality,Q_60']",['NBA_FMVP_Winners_2010_2020.csv'],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""Andre Iguodala"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Celebrity,"Identify the sport and the celebrity in all three images. For the sport common in all images, give me the name of the celebrity shown in the images with the highest oversea box office sales for the movies in the table that cover the same sport.
+
+Please return your final answer in a JSON format with the following schema:
+```json 
+{
+  ""name"": your_answer, # str type
+}
+```","['3_17_0.png', '3_17_12.png', '3_17_14.png']","['https://ew.com/thmb/H-hb9wnn_BbnEkKsz18oWfZK06Q=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/the-fighter-1-8772201921104df9ba90cac673766135.jpg', 'https://s3-us-west-2.amazonaws.com/prd-rteditorial/wp-content/uploads/2018/11/19140950/700Rocky.jpg', 'https://www.google.com/imgres?q=idris%20elba%20boxing&imgurl=https%3A%2F%2Fi.ytimg.com%2Fvi%2FK0F__R6lTz8%2Fmaxresdefault.jpg&imgrefurl=https%3A%2F%2Fm.youtube.com%2Fwatch%3Fv%3DK0F__R6lTz8&docid=h-JxoHlFMCm-LM&tbnid=p210nxQ3hTFD9M&vet=12ahUKEwik7rXG3aeFAxVwMVkFHdPECW8QM3oECBcQAA..i&w=1280&h=720&hcb=2&ved=2ahUKEwik7rXG3aeFAxVwMVkFHdPECW8QM3oECBcQAA']",['movie_stars_box_office_sales_example.csv'],GPT,Freeform,"{
+    ""name"": {
+        ""gt_answer"": ""Sylvester Stallone"",
+        ""answer_type"": ""str"",
+        ""eval_method"": ""exact""
+    }
+}",Hard
+Celebrity,"give me the name of the celebrity in these photos that is participating in the sport with the highest fatality rate according to the injury tableGive me the name of the celebrity in these photos that is participating in the sport with the highest fatality rate according to the attached table.
+
+Please return your final answer in a JSON format with the following schema:
+```json 
+{
+  ""name"": your_answer, # str type
+}
+```","['3_18_0.png', '3_18_12.png', '3_18_14.png']","['https://wnyskydiving.com/wp-content/uploads/2023/03/tom-cruise-in-free-fall-video.webp', 'https://www.usmagazine.com/wp-content/uploads/2019/10/Simon-Cowell-Celebrities-on-Bicycles-See-Hollywood%E2%80%99s-Pedal-Pushers-Ride-Through-the-Streets.jpg?w=1000&quality=86&strip=all', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPsnYPEa_zr0E5S8hSaBinZh391fHUS3atg0iE0RgXVw&s']",['sport_injury_rates.csv'],GPT,Freeform,"{
+    ""name"": {
+        ""gt_answer"": ""Tom Cruise"",
+        ""answer_type"": ""str"",
+        ""eval_method"": ""exact""
+    }
+}",Hard
+Mathematical Reasoning,"The triangle is a right triangle in the image. Then what is x?
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['4_1_0.png'],['https://pbs.twimg.com/media/GCDMAIZbUAAAYWo?format=png&name=small'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 1.27201964951, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.0001 
+         }
+}",OK
+Mathematical Reasoning,"The angle of two red segments is a right angle in the image. Then what is the radius of the circle? The answer should be a single number in centimeter.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['4_2_0.png'],['https://pbs.twimg.com/media/GBCKv5RbkAA-IfN?format=png&name=small'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 13, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",OK
+Mathematical Reasoning,"Write a python program to solve the math problem in this Figure. Return all possible solutions of (x,y,z) with a list of tuples.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['4_3_0.png'],['https://miro.medium.com/v2/resize:fit:1400/format:webp/1*7-xc1fcQ_8dsY9CihLvCOQ.png'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": [[3, 4, 2], [6, 4, 1], [8, 3, 1]], 
+             ""answer_type"": ""list_of_list"",
+             ""eval_method"": ""disordered_match""
+   }
+}",OK
+Mathematical Reasoning,"Write a python program to find the number of all positive integer solutions to the equation shown in the image.
+
+The answer should be an interger. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['4_4_0.png'],"['https://hips.hearstapps.com/hmg-prod/images/x3y3z3k-1568041112.jpg?crop=0.971xw:0.942xh;0,0&resize=1200:*']",[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 0, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Mathematical Reasoning,"The image shows five cylinders that contain water. It also shows their diameters and height of water of each cylinder. Which cylinder has the most water? Your answer must be among 'A' to 'E'.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['4_5_0.png'],['https://i.pinimg.com/736x/1f/b6/88/1fb688370da2102a4f120e0f4a78b09c.jpg'],[],Not Provided,Multi-Choice,"{
+   ""answer"": {
+             ""gt_answer"": ""B"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""}
+}",OK
+Mathematical Reasoning,"Find the answer of the question mark in the image by writing equations in python. Your answer should be an integer in centimeter.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['4_6_0.png'],['https://pbs.twimg.com/media/FwoZ2R7WAAIh9qh?format=jpg&name=900x900'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 14, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",OK
+Mathematical Reasoning,"What's the largest possible output (keep 2 decimal places) of the function shown in the image if the inputs are one of the rows in the table.
+
+The answer should have 2 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['4_7_0.png'],['自己截图的'],['inputs.csv'],自己写,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 65.33, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.01
+         }
+}",OK
+Mathematical Reasoning,"If this is a clock, how many errors are there?
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""n_error"": your_answer,
+}
+```",['4_8_0.png'],['手绘'],[],Not Provided,Freeform,"{
+   ""n_error"": {
+             ""gt_answer"": 8, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Mathematical Reasoning,"Find the answer of the question mark as shown in the image by writing equations in python.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['4_9_0.png'],['https://pbs.twimg.com/media/Fo0Po8haUAAIbGj?format=jpg&name=large'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""14cm"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""}
+}",Hard
+Mathematical Reasoning,"In the image, which one is longer? Answer the question with the character in front of them. Write code to calculate the length of each line, then compare, assume the square length is 1 in image.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['4_10_0.png'],['https://pbs.twimg.com/media/FpGBjNeaMAEWm0R?format=jpg&name=medium'],[],Not Provided,Multi-Choice,"{
+   ""answer"": {
+             ""gt_answer"": ""C"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""}
+}",Hard
+Mathematical Reasoning,"Answer the question in the image.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['4_11_0.png'],['https://i.pinimg.com/564x/1e/d7/42/1ed742cbb8252e60a7c6e906ad6aea96.jpg'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""8m"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""}
+}",Hard
+Mathematical Reasoning,"Answer the question in the image. Note: each shape represents a number between 0-9.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['4_12_0.png'],['https://i.pinimg.com/564x/e3/9e/cd/e39ecd6d1b700b0bcad6c25b3fd1a584.jpg'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 148, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",Hard
+Mathematical Reasoning,"According to the pattern in the picture, how many matchsticks do you need to make a 10 x 10 square? Please write a function num_matchsticks(n) to return the result for n x n square, and get num_matchsticks(10).
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{ 
+  ""answer"": your_answer, 
+} 
+```",['4_13_0.png'],['自制'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 220, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",Hard
+Mathematical Reasoning,"Identify the heights of black bars in the image, where the width of each bar is 1. Compute how much water (blue-colored) it can trap after raining. First write code to compute the trapped water if the input is a list of heights, then compute the result for the setting in the image. 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{ 
+  ""answer"": your_answer, 
+} 
+```",['4_14_0.png'],['https://assets.leetcode.com/uploads/2018/10/22/rainwatertrap.png'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 6, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",Hard
+Mathematical Reasoning,"There is a square in the image. What is the area of the square? write the calculation in python.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['4_15_0.png'],['https://pbs.twimg.com/media/FpZ9TykXoAEvY1S?format=jpg&name=900x900'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 9, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",Extreme Hard
+Mathematical Reasoning,"In the image, the 3 matches have the same length. What is the number of X. You can write code to finish this if needed. 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['4_16_0.png'],['https://pbs.twimg.com/media/Fm7UP2SXgAMPIF_?format=jpg&name=large'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 8.94427191, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.0001 
+         }
+}",Extreme Hard
+Others,"Given the image, identify the total number of people as well as the number of people who are angry vs. happy. Then write a python program to calculate the Least Common Multiplier (LCM) of the three numbers.
+
+Please return your final answer in a JSON format with the following schema: 
+```json 
+{
+  ""number_of_people"": int,
+  ""angry"": int,
+  ""happy"": int,
+  ""least_common_multiplier"": int
+}
+```",['5_1_0.png'],['Dalle'],[],Not Provided,Freeform,"{
+   ""number_of_people"": {
+        ""gt_answer"": 10,
+        ""answer_type"": ""int"",
+        ""eval_method"": ""exact""
+    },
+    ""angry"": {
+        ""gt_answer"": 4,
+        ""answer_type"": ""int"",
+        ""eval_method"": ""exact""
+    },
+    ""happy"": {
+        ""gt_answer"": 6,
+        ""answer_type"": ""int"",
+        ""eval_method"": ""exact""
+    },
+    ""least_common_multiplier"": {
+        ""gt_answer"": 60,
+        ""answer_type"": ""int"",
+        ""eval_method"": ""exact""
+    }
+}",OK
+Others,"The table contains nutritional information of various ingredients per 100 grams.
+Analyze the ingredients in each of the three dishes shown in the images, and determine which one contains the most amount of calories per 100 grams.
+For dishes containing multiple ingredients, calculate the average calorie count of all ingredients assuming equal weight.
+Only consider ingredients in the dishes that are included in the table.
+
+The answer can only be one of ""image_1"", ""image_2"" or ""image_3"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": str
+}
+```","['5_2_0.png', '5_2_12.png', '5_2_14.png']","['https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/865f4ecb-a246-4bba-a1a7-14cffd3ed84f/Derivates/3058adb5-821e-4576-9668-f8a9ea8e78d2.jpg', 'https://imageproxy.icook.network/resize?background=255%2C255%2C255&nocrop=true&stripmeta=true&type=auto&url=http%3A%2F%2Ftokyo-kitchen.icook.tw.s3.amazonaws.com%2Fuploads%2Frecipe%2Fcover%2F410673%2F1082b85f4febedb8.jpg&width=1080', 'https://cdn11.bigcommerce.com/s-ek50668lzs/images/stencil/1280x1280/products/2255/4999/mashed-potato__58967.1711129439.jpg?c=1?imbypass=on']",['nutritional_values.csv'],GPT,Multi-choice,"{
+   ""answer"": {
+        ""gt_answer"": ""image_1"",
+        ""answer_type"": ""str"",
+        ""eval_method"": ""exact""
+    }
+}",OK
+Others,"From the table of artists, determine which artist has the most consistent art style from what is shown in the image. 
+Write a python program to determine if the year when that artist was born is a palindrome.
+
+Return both the name of the artist (as shown in table) and whether the year of birth is a palindrome (must be one of ""Yes"", ""No"").
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""name"": str,
+  ""yob_palindrome"": bool
+}
+```",['5_3_0.png'],['https://i1.wp.com/blog.eyewire.org/wp-content/uploads/2019/04/evil-cubism.jpg?w=1320&ssl=1'],['artists.csv'],GPT,Freeform,"{
+    ""name"": {
+        ""gt_answer"": ""Pablo Picasso"",
+        ""answer_type"": ""str"",
+        ""eval_method"": ""exact""
+    },
+    ""yob_palindrome"": {
+        ""gt_answer"": true,
+        ""answer_type"": ""bool"",
+        ""eval_method"": ""exact""
+    }
+}",OK
+Others,"By looking at the image, tell me which one of the bottom five shapes is the same as the top one regardless of their size and direction. We label the five shapes with 1 to 5. Let x be the label. Then, the sheet provides several datapoints where column Y corresponds to the predicted values of column X. Use linear regression to determine that what is the predicted value for x. 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""predicted value"": your_answer
+}
+```",['5_4_0.png'],['https://childofminedirectory.wordpress.com/2012/06/17/assessment-tools-used-for-children-with-visual-perception-problems/'],['simple_numbers_dataset.csv'],自制,Freeform,"{
+    ""predicted value"": {
+        ""gt_answer"": 13,
+        ""answer_type"": ""int"",
+        ""eval_method"": ""exact""
+    }
+}",OK
+Others,"Attached is a picture of Mahjong (Chinese international rules). By looking at the picture, find by getting which tiles the player will win. Then, compute the summation of the numbers on the tiles that make a win and name it x. Find out the product of the x-th prime and the x-th Fibonacci number (starting with 1, 1).
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""product"": your_answer
+}
+```",['5_5_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/MahjongSet1.jpg/520px-MahjongSet1.jpg'],[],Not Provided,Freeform,"{
+    ""product"": {
+        ""gt_answer"": 782,
+        ""answer_type"": ""float"",
+        ""eval_method"": ""exact""
+    }
+}",OK
+Others,"Out of the artists listed in the table, determine the one with the most consistent art style to this image.
+Find out the year of birth of the artist from the table, then determine whether by it is possible to obtain a result of 24 by combining the four digits from the year of birth using only addition, subtraction, multiplication and division.
+
+Please return your final answer in a JSON format with the following schema: 
+```json 
+{
+    ""year_of_birth"": int,
+    ""twenty_four_possible"": bool
+}
+```",['5_6_0.png'],['Dalle'],['artists.csv'],GPT,Freeform,"{
+   ""year_of_birth"": {
+        ""gt_answer"": 1853,
+        ""answer_type"": ""int"",
+        ""eval_method"": ""exact""
+    },
+    ""twenty_four_possible"": {
+        ""gt_answer"": true,
+        ""answer_type"": ""bool"",
+        ""eval_method"": ""exact""
+    }
+}",Hard
+Others,"I really want pets but I don't like cold blooded animals. Also I just had my allergy test and got back the result in the image.
+Based on the table, what is the most amount of money that I need to have for a single pet I could get?
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+    ""money"": int
+}
+```",['5_7_0.png'],['https://www.aashwas.in/wp-content/uploads/2018/08/spt.jpg'],['pets_initial_costs.csv'],GPT,Freeform,"{
+    ""money"": {
+        ""gt_answer"": 150,
+        ""answer_type"": ""int"",
+        ""eval_method"": ""exact""
+    }
+}",Hard
+Others,"I bought 100 shares of all four companies shown in the table on the first day of 2023. Looking at my return now on the last day of 2023, which photo in these two tweets am I more likely to steal? Give me your answer as the Tweeter handle of the corresponding tweet poster.
+
+Your answer must be one of ""@sama"", ""@GRTeamchaos"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": str
+}
+```","['5_8_0.png', '5_8_12.png']","['https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/15863c6f-1580-41ac-886a-f1f5d0e5a152/Screenshot_2024-03-05_at_10.43.17_AM.png?t=1709653404', 'https://i.chzbgr.com/full/9706967296/hDEAD7E57/combusted-dont-know-talking-about-just-minding-my-own-business-634-pm-oct-13-2022-twitter-iphone']",['stonks_v2.csv'],自创,Multi-choice,"{
+    ""answer"": {
+        ""gt_answer"": ""@GRTeamchaos"",
+        ""answer_type"": ""str"",
+        ""eval_method"": ""exact""
+    }
+}",Hard
+Others,"Given this grid of emojis. I want you create a 2D array, in python, of the same width and height where each entry indicates whether the corresponding emoji is ""happy"" or ""sad"". 
+I then want you to write a piece of code that return all column indices (starting from 0 on the left) where the number of happy faces is a prime number sorted in ascending order.
+
+```json 
+{
+    ""prime_happy_columns"": ""list_of_int""
+}
+```",['5_9_0.png'],['Apple 输入法'],[],Not Provided,Freeform,"{
+    ""prime_happy_columns"": {
+        ""gt_answer"": [1,2,3,4,5,6], 
+        ""answer_type"": ""list_of_int"",
+        ""eval_method"": ""exact""
+    }
+}",Hard
+Others,"Provided is an image of a chess board. The next move is from white. Find the best move for white in the form of (starting position, end position), where each position is represented as its column number followed by its row number. For example, a move can be (a5, b7). Then, by viewing the position as a base-18 number and the move as a tuple of base-18 number, calculate Euclidean distance of the move to the original point. Reply with the square of the distance as a base-18 number. 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""square of the distance"": your_answer
+}
+```",['5_10_0.png'],['https://simplifychess.com/wp-content/uploads/2017/12/Checkmate_1_1.png'],[],Not Provided,Freeform,"{
+    ""square of the distance"": {
+        ""gt_answer"": ""34g"",
+        ""answer_type"": ""str"",
+        ""eval_method"": ""exact""
+    }
+}",Hard
+Commonsense Reasoning,"Given the table of price, how much does it cost to buy all animals in the image?
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_1_0.png'],['https://d4804za1f1gw.cloudfront.net/wp-content/uploads/sites/28/2021/12/shutterstock_752120836-300x199.jpg'],['chicken_price.csv'],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 60, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0
+         }
+}",Easy
+Commonsense Reasoning,"Let `n` be the number of baby polar bears in the picture. Return the output of the following function with input `n`.
+
+```
+def f(n):
+    if n == -2:
+        return 2
+    return 2 * f(n-1) + 3
+```
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_2_0.png'],['https://i.natgeofe.com/k/55256f3f-2cf1-4b93-9d95-a13b0faa30a6/Mom-and-Babies_Polar-Bear_KIDS_0223-crop_3x2.jpg'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 77, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0
+         }
+}",Easy
+Commonsense Reasoning,"Given the table, what's the density of the planet in the image in g/cm3? Please round to three decimal places.
+
+The answer should have 3 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_3_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Jupiter_New_Horizons.jpg/290px-Jupiter_New_Horizons.jpg'],['mv.csv'],自己写,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 1.326, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.001
+         }
+}",OK
+Commonsense Reasoning,"There are two clocks on the wall of a hotel in Shanghai. The clock on the left shows local time. Referring to the given table, What's the most possible place that has clock time shown on the right clock.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_4_0.png'],['https://www.caracaschronicles.com/wp-content/uploads/2016/01/clocks-2-800x486.jpg'],['time.csv'],自己写,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""United Arab Emirates"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Commonsense Reasoning,"Write a Python program to compute the largest prime number that is smaller than the largest number the cards in the image can form by concatenation.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_6_0.png'],['https://cdn.414080.xyz/wp-content/uploads/2017/09/timg.jpg'],[],None,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 8641, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0
+         }
+}",Hard
+Commonsense Reasoning,"The image depicts a man of age 30 with his child. The man is born in dragon year and his child is born in dog year. Referring to the table, find out average height in cm of children at the age of his child.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_7_0.png'],['https://i5.walmartimages.com/asr/686f5d1f-efe9-4062-abdb-808d46c904dc.6aacc2e91f283dd59c606fde9c16e320.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF'],['heights.csv'],GPT4生成,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 152, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0
+         }
+}",Hard
+Commonsense Reasoning,"Calculate from the table the rank of the per capita GDP of the highlighted continent in the image among all continents. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```
+where your answer should be a number, e.g., `1` for ranking first.",['6_9_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Australia_in_the_world_%28de-facto%29_%28W3%29.svg/800px-Australia_in_the_world_%28de-facto%29_%28W3%29.svg.png'],['continent_statistics.csv'],GPT 生成,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 2, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Commonsense Reasoning,"What is the least common multiple of the month and date numbers in the date most relevant to the content displayed in the image? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_10_0.png'],['https://umaine.edu/gci/wp-content/uploads/sites/95/2021/10/istockphoto-1088113218-612x612-1-min.jpg'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 44, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Commonsense Reasoning,"Output a movie's name in the table that has the same director and main character as the movie shown in the poster.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_11_0.png'],['https://m.media-amazon.com/images/S/pv-target-images/dbb9aff6fc5fcd726e2c19c07f165d40aa7716d1dee8974aae8a0dad9128d392.jpg'],['tmdb_5000_movies - Sheet1.csv'],https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""Kill Bill: Vol. 1,"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Commonsense Reasoning,"Referring to the table, find the number of students of the university that is closest to the city shown in the picture.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_12_0.png'],['https://storage.googleapis.com/pod_public/1300/169868.jpg'],['university.csv'],自己写,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 50000, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0
+         }
+}",Easy
+Commonsense Reasoning,"The woman in the picture wants to buy a medicine listed in the table, how much will she spend?
+
+The answer should have 2 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_13_0.png'],['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVNDSC4iFjyTR5_-sz5tneHQ33aJ4ngDLikPq-rWOkTudyGopN'],['medicine.csv'],自己写,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 13.99, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.01
+         }
+}",Easy
+Commonsense Reasoning,"Based on the image, deduce the most likely season among [""spring"", ""summer"", ""autumn"", ""winter""] in which the image could have occurred. Then given the string, return the lexicographically smallest contiguous substring of length three. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_14_0.png'],['https://www.billboard.com/wp-content/uploads/2022/12/winter-music-playlist-2022-billboard-1548.jpg'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""int"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Commonsense Reasoning,"What sports is the man in the image playing? Take the sports name as the input string. In order to turn it into a palindrome, how many letters need to be changed at minimum? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_15_0.png'],['https://www.atptour.com/-/media/images/news/2024/03/13/20/35/ruud-indian-wells-2024-wednesday.jpg'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 2, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Commonsense Reasoning,"The following function computes the power of a piece given its three attributes:
+```
+def f(x, y, z):
+    return (x ** 2 - 5 * y) // z
+```
+Now referring to the table for attributes of each piece, output the number of possible moves of the black piece with maximum power.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_17_0.png'],['自己截图'],['chess.csv'],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 4, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0
+         }
+}",Hard
+Commonsense Reasoning,"Let `x` be the number of three-in-a-row of yellow pieces (horizontal, vertical, or diagonal) in the image. Compute `a(x)`, where `a(1)=1` and `a(n+1)=a(n) ** 2 - 3 * a(n) + 2`.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_18_0.png'],['https://img.ltwebstatic.com/images3_spmp/2023/11/28/2d/17011648619b51c757c873bfa7ff73b83d7a27d322_thumbnail_900x.webp'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 0, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0
+         }
+}",OK
+Commonsense Reasoning,"Referring to the image, let `x` be the number of rows eliminated after the piece drop down and `y` be the number of different colors in the eliminated rows. Compute the longest palindromic subsequence of the string in `x`-th column and `y`-row of the attached file.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_19_0.png'],['https://a.silvergames.com/j/b/tetris.jpg'],['tetris.csv'],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 4,
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0
+         }
+}",Easy
+Commonsense Reasoning,"According to the workout plan outlined in the table, how much weight she is holding in her hand in lb?
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_20_0.png'],['https://www.regymenfitness.com/wp-content/uploads/2021/12/Sportive-serious-people-liftin-980x654.jpg'],['gym.csv'],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 150,
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0
+         }
+}",Easy
+Commonsense Reasoning,"According to the board layout shown in the image, what is the only infeasible next step option for the Rook at b3 to choose? Based on the option, find the corresponding value i from the .csv file, consider corresponding value of your choice as ""i"", what is the i-th prime number? Return your answer using the following json format: ```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_21_0.png'],['chess.com'],['chess-02-option.csv'],自己下了几步后截图,Freeform,"{ ""answer"": { ""gt_answer"": 59,  ""answer_type"": ""int"", ""eval_method"": ""exact"" }}",OK
+Commonsense Reasoning,"How many apples in the image that generally considered sour? Based on the your count, obtain the value in the table, and consider corresponding value of your choice as ""i"", what is the i-th prime number? Return your answer using the following json format: ```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_22_0.png'],['https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/07/what_to_know_apples_green_red_1296x728_header-1024x575.jpg'],['apple-01-options.csv'],Not Provided,Freeform,"{ ""answer"": { ""gt_answer"": 7,  ""answer_type"": ""int"", ""eval_method"": ""exact"" }}",Easy
+Commonsense Reasoning,"What is the most suitable option given in the image to fill in the grid marked with ""?"". Based on your option, obtain the value in the table, consider the corresponding value as ""i"", and return the i-th number in the Fibonacci sequence  using the following json format: ```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_23_0.png'],['https://www.mensa.org/'],['mensa-01-options.csv'],截图，网站上无source,Freeform,"{ ""answer"": { ""gt_answer"": 13,  ""answer_type"": ""int"", ""eval_method"": ""exact"" }}",Easy
+Commonsense Reasoning,"Among the occupation listed in the table, what is the most likely occupation of the man in the picture? What is the smallest prime number above the average salary of this occupation based on the table? Return your answer using the following json format: ```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_24_0.png'],['https://www.pond5.com/stock-footage/item/92787553-businessman-looking-out-office-window-big-city?ref=getmedia'],['occupation-01-options.csv'],截图自视频,Freeform,"{ ""answer"": { ""gt_answer"": 90001,  ""answer_type"": ""int"", ""eval_method"": ""exact"" }}",OK
+Commonsense Reasoning,"What color will the traffic light be after 18 seconds? As a road planner, I now have to plan how long traffic lights of that color will last.
+
+The lighting times of various colors of lights are as follows:
+\text{green} =\max\left(\min\left(\frac{flow}{2000}, 0.3\right), 0.6\right)\times 5
+\text{red} =\min\left(1-\text{green}-0.3), 0.6\right) \times 5
+\text{yellow} =\min\left(1-\text{red}-0.3), 0.1\right) \times 5
+Where flow refers to the traffic volume (assumed to be 1200).
+
+Please write code to calculate, and then tell me, how long does the traffic light of this color last?
+
+The answer should have 2 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""duration"": your_answer,
+}
+```",['6_25_0.png'],['https://www.sphere.hr/wp-content/uploads/2017/04/countdown-traffic-lights-1024x683.jpg'],[],Not Provided,Freeform,"{
+   ""duration"": {
+             ""gt_answer"": 3.0, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.01 
+         }
+}",OK
+Commonsense Reasoning,"Provided is a picture of Texas Hold 'Em. Determine which hands is the largest and let me know if the five cards in the largest hand can construct 24 with basic arithmetic operations. 
+
+Please return your final answer in a JSON format with the following schema. Your answer should be either yes or no.
+```json 
+{
+  ""can construct 24"": your_answer,
+}
+```",['6_26_0.png'],['https://www.sycuan.com/wp-content/uploads/2020/12/Ultimate-Texas-Holdem-2-1536x1024.jpg'],[],Not Provided,Freeform,"{
+ ""can construct 24"": {
+ ""gt_answer"": ""yes"", 
+ ""answer_type"": ""str"",
+ ""eval_method"": ""exact"" 
+ }
+}",Hard
+Commonsense Reasoning,"You are given a image of a binary tree. Please write a Python code to compute and output the diameter of this tree.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_27_0.png'],['https://media.geeksforgeeks.org/wp-content/uploads/20230203074235/new-binary-tree.png'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 6,
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0
+         }
+}",OK
+Commonsense Reasoning,"What is the most suitable option given in the image to fill in the grid marked with ""?"". Based on your option, obtain the value in the table, consider the corresponding value as ""i"", and return the i-th number in the Fibonacci sequence  using the following json format: ```json 
+{
+  ""answer"": your_answer,
+}
+```","['6_29_0.png', '6_29_12.png']",['https://www.mensa.org/public/mensa-iq-challenge'],['mensa-01-options.csv'],Not Provided,Freeform,"{ ""answer"": { ""gt_answer"": 144,  ""answer_type"": ""int"", ""eval_method"": ""exact"" }}",OK
+Commonsense Reasoning,"Here is an image of a sequence of consecutive numbers of a certain type (left to right, top to bottom). What is the next number of this sequence? Return your answer using the following json format: ```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_31_0.png'],['https://www2.cs.arizona.edu/icon/oddsends/primes.htm'],[],自己截图，网站原本不是图片,Freeform,"{ ""answer"": { ""gt_answer"": 18521,  ""answer_type"": ""int"", ""eval_method"": ""exact"" }}",Hard
+Commonsense Reasoning,"What is the average price of the car make in the image in Washington state according to the csv dataset?
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_34_0.png'],['https://www.mbusa.com/content/dam/mb-nafta/us/myco/my23/eqe-sedan/all-vehicles/2023-EQE350-SEDAN-AVP-DR.png'],['car_prices.csv'],https://www.kaggle.com/datasets/syedanwarafridi/vehicle-sales-data?resource=download,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 14850.27, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Commonsense Reasoning,"What is the 25% price quantile of the cars with the same model in the image in California according to the csv dataset?
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['6_35_0.png'],"['https://reviewed-com-res.cloudinary.com/image/fetch/s--B-pBjL2I--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,h_668,q_auto,w_1187/http://reviewed-production.s3.amazonaws.com/attachment/f8e6beb0cd600c2e6463fec4e5547e4239232f92/Mazda-CX-5--Dash.jpg']",['car_prices.csv'],https://www.kaggle.com/datasets/syedanwarafridi/vehicle-sales-data?resource=download,Freeform,"{
+ ""answer"": {
+ ""gt_answer"": 19000, 
+ ""answer_type"": ""float"",
+ ""eval_method"": ""exact""
+ }
+}",OK
+Commonsense Reasoning,"Provided are an image of a movie and a dataset about several books. The movie is based on a novel by a writer who wrote a book included in the dataset. Find the number of pages of the book and the number of prime factors of it. Reply with the number of prime factors.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""number of prime factors"": your_answer,
+}
+```",['6_36_0.png'],['https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg'],['books_dataset.csv'],GPT,Freeform,"{
+ ""number of prime factors"": {
+ ""gt_answer"": 2, 
+ ""answer_type"": ""int"",
+ ""eval_method"": ""exact""
+ }
+}",OK
+Commonsense Reasoning,"Provided is an image about flight information. I am going to depart on April 2nd and come back on a weekend in May. Find the lowest price I can get. Then, find the closest prime number to the price.
+
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""closest_prime_number"": your_answer,
+}
+```",['6_37_0.png'],['截图'],[],Not Provided,Freeform,"{
+ ""closest_prime_number"": {
+ ""gt_answer"": 431, 
+ ""answer_type"": ""int"",
+ ""eval_method"": ""exact""
+ }
+}",Hard
+Commonsense Reasoning,"Today is 2019-04-17. Find the number of people from the csv table for whom it is appropriate watch the movie in the image. Tips: You should answer this question based on the age of your audience.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""number of people"": your_answer,
+}
+```",['6_38_0.png'],['https://upload.wikimedia.org/wikipedia/en/a/a0/A_Quiet_Place_film_poster.png'],['people.csv'],自制,Freeform,"{
+ ""number of people"": {
+ ""gt_answer"": 2, 
+ ""answer_type"": ""int"",
+ ""eval_method"": ""exact""
+ }
+}",Hard
+Commonsense Reasoning,"One of the item in the second to fourth images can be used to observe the scene of the first image. What is its price rank in the table? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```
+where your answer should be a number, e.g., `1` for ranking first.",['6_39_0.png'],['https://i.epochtimes.com/assets/uploads/2020/10/shutterstock_515581882-600x400.jpg'],['astronomy_related_items_en.csv'],GPT 生成,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 6, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Spatial Relation Reasoning,"This is a real, non-synthesized photo. What is the number of people that are in the pot? Is this number of people in the pot a prime number? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""number of people"": your_answer (integer),
+  ""prime"": your_answer (boolean),
+}
+```",['7_1_0.png'],['link'],[],Not Provided,Freeform,"{
+   ""number of people"": {
+             ""gt_answer"": 0, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         },
+   ""prime"": {
+             ""gt_answer"": false, 
+             ""answer_type"": ""bool"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Spatial Relation Reasoning,"The first image shows the lunch for David, and the second image shows the lunch for Kevin. Based on the sheet provided, if David trades 50g of the food in the upper right corner of his lunch box with 50g of the food in the lower left of Kevin's lunch box, how much more calories will he gain in lunch? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['7_2_0.png'],['https://www.safefood.net/getmedia/ed3c43fd-8949-4017-932c-bb3049f9b1d6/lunchbox-food-safety.jpg?w=1280&h=720&ext=.jpg&width=1360&resizemode=force'],['Food_Calories (1).csv'],GPT-4,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 13.5, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"",
+             ""tolerance"": 0.1
+         }
+}",OK
+Spatial Relation Reasoning,"You will answer my question SOLELY based on the information given in the picture and my following description. If the woman in the picture has her hands about 2.1 meters away from the ground, what is a good estimate of the thickness of the bricks on the wall? Choose from A: 21cm, B: 16cm, C: 10cm, D: 7cm. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['7_3_0.png'],['link'],[],Not Provided,Multi-choice,"{
+ ""answer"": {
+ ""gt_answer"": ""D"", 
+ ""answer_type"": ""str"",
+ ""eval_method"": ""exact""
+ }
+}",Extreme Hard
+Spatial Relation Reasoning,"Tom wants to buy the guitar located on the upper left corner and the lower right corner of the picture. The relation between the price and the color is attached in the csv file. How much will Tom need to pay? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""cost"": your_answer,
+}
+```",['7_4_0.png'],['http://tiebapic.baidu.com/forum/w%3D580/sign=b5412bf84cd162d985ee621421dfa950/e4bdce1b9d16fdfa1818a3d2f28f8c5494ee7b6c.jpg?tbpicau=2024-04-19-05_9de6062f0de6934ba3ba33699056544f'],['DATA1.xlsx'],Not Provided,Freeform,"{
+   ""cost"": {
+             ""gt_answer"": 1853.0, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.0001 
+         }
+}",OK
+Spatial Relation Reasoning,"Peter wants to buy a car to drive for three years. There are five cars in the picture to choose from. He wants to pick a color that depreciates the least amount of money in this period. Given the vehicle depreciation data contained in the csv file. Which car in the picture should he pick? Count from left to right, give the number of the car to choose. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['7_5_0.png'],['GMC-Terrain'],['vehicle_depreciation_by_color.csv'],iSeeCars,Freeform,"{
+ ""answer"": {
+ ""gt_answer"": 2, 
+ ""answer_type"": ""int"",
+ ""eval_method"": ""exact""
+ }
+}",Easy
+Spatial Relation Reasoning,"Joe put one drop of glue between any two cubes that share a common face. How many drops of glue did he use? Please reason step by step.
+
+The answer is an integer. 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{ 
+  ""number"": your_answer, 
+} 
+```",['7_6_0.png'],['https://meritnation-question-images.s3.ap-southeast-1.amazonaws.com/toppr_ext/questions/111214_c7631b03d002464d85bcaae4eba8f3a5.png'],[],Not Provided,Freeform,"{
+   ""number"": {
+             ""gt_answer"": 12, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",Hard
+Spatial Relation Reasoning,"Assume you are TOM, after follow movement provided in csv file, what do you have finally? Please return your final answer in a JSON format with the following schema 
+```json 
+{ 
+  ""answer"": your_answer, 
+} 
+```",['7_7_0.png'],['https://ars.els-cdn.com/content/image/1-s2.0-S0888613X17306199-gr001.jpg'],['movement.csv'],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""Bob"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""}
+}",Easy
+Spatial Relation Reasoning,"What is the relative position of the camera to the car? Please choose from ""left"" and ""right"", and based on the weighted, bidirectional graph shown in the other image, if you choose ""left"", please write a python code to find the shortest path from node 7 to node 4, and if you choose ""right"", please find the shortest path from node 7 to node 3. Please return the length of the shortest path you find. Return your answer using the following json format: ```json 
+{
+  ""answer"": your_answer,
+}
+```","['7_8_0.png', '7_8_12.png']","['https://www.psychologicalscience.org/redesign/wp-content/uploads/2019/10/Driver-Eye-Movement-MOTR-Story-10-22-19.png', 'https://media.geeksforgeeks.org/wp-content/uploads/20240111182238/Working-of-Dijkstras-Algorithm-768.jpg']",[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 13, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",OK
+Spatial Relation Reasoning,"Given the image attached, consider the dark-gray sedan and the white van in the image. Qhat is the relative position of the white van to the dark-gray sedan? Please choose from ""left"", ""right"", ""front"", ""behind"" that can best describe their spatial relation. Based on your choice, consider x=3 if choose ""left"", x=4 if choose ""right"", x=5 if choose ""front"", x=6 if choose ""behind"". Please return the x-th prime number using the following json format: ```json 
+{
+  ""answer"": your_answer,
+}
+```",['7_9_0.png'],['https://www.youtube.com/watch?v=fkps18H3SXY'],[],视频截图,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": 13, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",Hard
+Spatial Relation Reasoning,"Please locate the red sneaker and the white sneaker in the image, what is relative position of the white one to the red one? Please choose from ""left"" and ""right"", and consider x=1 if you choose ""left"",x=2 if you choose ""right"". Then consider y = x + [the number of sneakers between the red one and the white one], what is the y-th prime number? Return your answer using the following json format: ```json 
+{
+  ""answer"": your_answer,
+}
+```",['7_10_0.png'],"['https://media.gq.com/photos/653aa2f89a9de48ee4c9181f/16:9/w_2240,c_limit/sneakers.jpg']",[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 3, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",OK
+Spatial Relation Reasoning,"There is a pair of shoes shown in the image, what is the shoe in the front? If it is a left shoe, please return the 5th prime number, and if it is a right shoe, please return the 7th prime number. 
+
+Return your answer using the following json format: ```json 
+{
+  ""answer"": your_answer,
+}
+```",['7_11_0.png'],['https://cdn.thewirecutter.com/wp-content/media/2024/03/whitesneakers-2048px-greats-royale.jpg?auto=webp&quality=75&width=1024&dpr=2'],[],Not Provided,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": 17, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",OK
+Spatial Relation Reasoning,"The cost of the cookies is provided in the attached file. Tony like the cookies below the small green cookie box, and jenny like the cookie below the big blue cookie box. Danny buy three box of the cookie jenny likes and two boxes of the cookie tony likes. What is the cost Danny spend? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""cost"": your_answer,
+}
+```",['7_12_0.png'],['https://images.unsplash.com/photo-1711409003453-0175d46a8bb8?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=tyler-nix-tKOvSRRZIak-unsplash.jpg'],['Q9.xlsx'],自制,Multi-choice,"{
+   ""cost"": {
+             ""gt_answer"": 20, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0
+         }
+}",OK
+Spatial Relation Reasoning,"In the image, you can move from one icon to its adjacent icon. The attached file provide the cost of each moves, which is decided by the direction of the move. What is the cost of the shortest path from 'mail' to 'chats'? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""shortest path"": your_answer,
+}
+```",['7_13_0.png'],['https://delivery.unsplash.com/premium_photo-1711652787537-1eaa799180ee?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=planet-volumes-KASxKCX3bFs-unsplash.jpg&expires=1711929599&s=129f00af3026d5841425033988f28298'],['Q10.csv'],自制,Freeform,"{
+   ""shortest path"": {
+             ""gt_answer"": 3.0, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.1 
+         }
+}",Hard
+Spatial Relation Reasoning,"Sofie wants to write the word KENGU by using letters from the boxes. She can only take one letter from each box. Which letter must Sofie take from box 4? Note she does not need to take letter from the boxes by the order of KENGU.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['7_14_0.png'],['自制'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""G"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""}
+}",Hard
+Spatial Relation Reasoning,"A green ball rolls on a table with edges and in the direction as the arrows show. Each cell is a square. Which hole will the ball fall into if it continues to roll in the same way? Choose one from A, B, C, D.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['7_15_0.png'],['自制'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""A"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""}
+}",Hard
+Spatial Relation Reasoning,"Every time the kangaroo jumps up 7 steps, the rabbit hops down 3 steps. The stairway has 100 steps. On which step do they meet?  Write code to solve the problem. 
+
+Return your answer using the following json format: 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['7_16_0.png'],['https://thetinymath.com/wp-content/uploads/2021/12/1122406.png'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 70, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",Easy
+Spatial Relation Reasoning,"The attached file provide the price of the items on the table. Which of the following statements is true? The answer can only be one of  ""The most expensive item is at the left of the cheapest item."", ""The most expensive item is at the right of the cheapest item."" Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['7_17_0.png'],['https://delivery.unsplash.com/premium_photo-1711051475117-f3a4d3ff6778?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=mushaboom-studio-6RqSDGaNJ5c-unsplash.jpg&expires=1711929599&s=1a6a1c96779e563386f49bb76a6d947f'],['Q11.csv'],自制,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""The most expensive item is at the right of the cheapest item."", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""}
+}",Easy
+Spatial Relation Reasoning,"The score of shooting each balloon is attached in the file. Tom shoot the highest ball and jack shoot the lowest ball. Who has a higher score? The answer can only be one of ""Tom"",  ""Jack"". Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['7_18_0.png'],['https://images.unsplash.com/photo-1610878310548-b582f59a9419?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=anand-thakur-rOykG2pQk9M-unsplash.jpg'],['Q14.csv'],自制,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""Jack"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""}
+}",OK
+Spatial Relation Reasoning,"There is a match of game of go on the table. Which side has more liberties now? Make your choice from A: White, B: Black, C: Same. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['7_19_0.png'],['link'],[],Not Provided,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""B"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""}
+}",OK
+Spatial Relation Reasoning,"This is a match of game of go. How many liberties does each side have? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""white"": your_answer,
+  ""black"": your_answer,
+}
+```",['7_20_0.png'],['link'],[],Not Provided,Freeform,"{
+ ""white"": {
+ ""gt_answer"": 10, 
+ ""answer_type"": ""int"",
+ ""eval_method"": ""exact""},
+ ""black"": {
+ ""gt_answer"": 6, 
+ ""answer_type"": ""int"",
+ ""eval_method"": ""exact""}
+}",Easy
+Spatial Relation Reasoning,"The attached image shows a directed graph, which can be interpreted as a linked list, where the node names are labeled within the circles. Please write some python codes to first turn the graph in to a (single directional) linked-list, and remove the node E, finally return the linked list in the form of ""[node-name 1], [node-name 2],  ...."" from the head to the tail. Please return the x-th prime number using the following json format: ```json 
+{
+  ""answer"": your_answer,
+}
+```, where your_answer should be a list of node of your choice split by "","", and your_answer should be a string type.",['7_21_0.png'],['self-made'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""A,D,H,G,F,B,C,I"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""}
+}",OK
+Spatial Relation Reasoning,"Define a Python function where the input is a number and the output is the Fibonacci number closest to that number.
+Given a diagram of the unfolded surface of a paper box, identify among the following four options A, B, C, and D, which cannot be formed by folding it. Treat the chosen option as a hexadecimal number and multiply them. Enter this product into the above function and tell me the final result.
+
+Please return the answer using the following json format: 
+```json 
+{
+  ""result"": your_answer,
+}
+```",['7_22_0.png'],['https://gwyapp-files.oss-cn-shanghai.aliyuncs.com/wangxiaofiles/%E5%88%B7%E9%80%8F%E8%A1%8C%E6%B5%8B10000%E9%A2%98%E8%AE%B2%E4%B9%89/%E5%88%B7%E9%80%8F%E8%A1%8C%E6%B5%8B10000%E9%A2%98%E8%AE%B2%E4%B9%89%E6%96%B0/%E5%88%B7%E9%80%8F%E8%A1%8C%E6%B5%8B10000%E9%A2%98%E5%9B%BE%E5%BD%A2%E6%8E%A8%E7%90%86%E7%AC%AC%E4%B8%80%E6%9C%9F%EF%BC%88440%E9%A2%98%EF%BC%89.pdf'],[],Not Provided,Freeform,"{
+   ""result"": {
+             ""gt_answer"": 1597, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",Hard
+Spatial Relation Reasoning,"This is tile matching game. Two tiles with the same picture can be matched if they can be connected by a polyline with no more than three sections. The qualifying polyline cannot cross any existing tile. Suppose there are n possible matches in this game. Calculate the Euler's totient function with input n, where Euler's totient function is defined as the number of positive integers not greater than n that are coprime with n. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer (interger),
+}
+```",['7_23_0.png'],['link'],[],Not Provided,Freeform,"{
+ ""answer"": {
+ ""gt_answer"": 10, 
+ ""answer_type"": ""int"",
+ ""eval_method"": ""exact""}
+}",Hard
+Spatial Relation Reasoning,"Tommy plays with three arrows on a table. In each move, he takes the arrow on the right, flips it over, and puts it to the left of the other arrows. What do the arrows look like after 10 moves? Write a program flip_arrows(num_moves) which returns the final state after num_moves moves, and compute filp_arrow(10). 
+
+Choose one from the following (A) down, up, up; (B) down, down, up; (C) up, up, down; (D) down, down, down; (E) up, up, up
+
+Return your answer using the following json format: 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['7_24_0.png'],['自制'],[],Not Provided,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""C"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""}
+}",OK
+Spatial Relation Reasoning,"This is a match of game of gomoku. Based on the current situation, will any side win for sure? Choose from A: Black, B: White, C: Neither. If you did not choose C, how many more steps does that side need to make to win the game? If a side will win in n steps for sure, also calculate the n-th smallest Jordan–Polya number, which is a number that can be obtained by multiplying together one or more factorials, not required to be distinct from each other. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""winner"": your_answer,
+  ""steps to win"": your_answer,
+  ""Jordan-Polya number"": your_answer,
+}
+```
+where the fileds ""steps to win"" and ""Jordan-Polya number"" can be filled with None if you choose C for the ""winner"".",['7_25_0.png'],['自制'],[],Not Provided,Freeform,"{
+ ""winner"": {
+ ""gt_answer"": ""A"", 
+ ""answer_type"": ""str"",
+ ""eval_method"": ""exact""},
+ ""steps to win"": {
+ ""gt_answer"": 3, 
+ ""answer_type"": ""int"",
+ ""eval_method"": ""exact""},
+ ""Jordan-Polya number"": {
+ ""gt_answer"": 4, 
+ ""answer_type"": ""int"",
+ ""eval_method"": ""exact""}
+}",Hard
+Spatial Relation Reasoning,"There are three piles of cubes in the picture. Calculate the difference between the number of cubes of adjacent piles. Use these two numbers to form a Fibunacci sequence and give the 100th element of it. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['7_26_0.png'],['link'],[],Not Provided,Freeform,"{
+ ""answer"": {
+ ""gt_answer"": 1365218683862189337228, 
+ ""answer_type"": ""int"",
+ ""eval_method"": ""exact""}
+}",Hard
+Spatial Relation Reasoning,"This is a maze. Starting from the entrance indicated by ""start here"", what is the smallest number of turns one has to make to reach the house in the center? If it takes n turns to reach the house, calculate the n-th smallest highly composite number, which is a positive integer with more divisors than any smaller positive integer. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""turns"": your_answer,
+  ""highly composite number"": your_answer,
+}
+```
+where the filed ""highly composite number"" can be filled with None if you write 0 for the ""turns"".",['7_27_0.png'],['link'],[],Not Provided,Freeform,"{
+ ""turns"": {
+ ""gt_answer"": 10, 
+ ""answer_type"": ""int"",
+ ""eval_method"": ""exact""},
+ ""highly composite number"": {
+ ""gt_answer"": 120, 
+ ""answer_type"": ""int"",
+ ""eval_method"": ""exact""}
+}",OK
+Spatial Relation Reasoning,"Which feet of the person in the image is closer to the dumbbel? The attached file provide the information of the dominat hand  of people in class 2. Calculate the percentage of people whose dominant hand is the same with the asnwer to the question at the beginning. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""Percentage"": your_answer,
+}
+```",['7_28_0.png'],['https://cdn.shopify.com/s/files/1/0773/9480/5030/files/Reduces_Stress_and_Anxiety.jpg?v=1706543714'],['Q19.csv'],自制,Freeform,"{
+   ""Percentage"": {
+             ""gt_answer"": 0.518, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.01 
+         }
+}",OK
+Spatial Relation Reasoning,"Tom and his father are playing a game. The score depends on the color of the stick they pick. Tom pick up the stick at the lower right corner, and his father pick up the stick underneath the orange stick at the lower left corner. Who have a higher score? The answer can only be one of  ""Tom"", ""Tom's father"", ""Equal"". Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['7_29_0.png'],['https://p9.itc.cn/q_70/images03/20221022/b0df4f4621954df38354981b19c156fa.jpeg'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""Equal"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Spatial Relation Reasoning,"The goat in the picture can pick a way to go. Suppose there are n turns along the way leading to the money envelope. Calculate the n-th smallest Sphenic number, which is product of 3 distinct primes. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['7_30_0.png'],['自制'],[],Not Provided,Freeform,"{
+ ""answer"": {
+ ""gt_answer"": 110, 
+ ""answer_type"": ""int"",
+ ""eval_method"": ""exact""}
+}",Hard
+Count,"Develop a Python function to compute the factorial of n, where n is the total number of ground transportation vehicles in the image
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```. ",['8_1_0.png'],['https://m.media-amazon.com/images/I/81NgLvzx2YL._AC_SX679_.jpg'],[],Not Provided,freeform,"{
+   ""answer"": {
+             ""gt_answer"": 51090942171709440000, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Count,"Craft a Python script that determines whether a number p is a perfect square, where p corresponds to the quantity of green leaves in a given photograph.
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer, #Yes or No
+}
+```",['8_2_0.png'],['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaNE9FlTX-CYgJbi6oKv6VcNog5pl_fWrT_A&usqp=CAU'],[],Not Provided,freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""Yes"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Count,"Develop a Python script to generate a sequence of triangular numbers starting from 1, with the sequence's length being the total number of hats present in the image.
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['8_3_0.png'],['https://st2.depositphotos.com/1526816/6758/v/950/depositphotos_67584367-stock-illustration-hats.jpg'],[],Not Provided,freeform,"{
+   ""answer"": {
+             ""gt_answer"":  [1, 3, 6, 10, 15, 21, 28, 36, 45], 
+             ""answer_type"": ""list_of_int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Count,"Compose a Python program to print out a * string in a pyramid pattern, where the number of levels in the pyramid should match the total count of pencils shown in the picture.
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['8_4_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Pencils_hb.jpg/440px-Pencils_hb.jpg'],[],Not Provided,freeform,"{
+   ""answer"": {
+             ""gt_answer"": "" * \n***"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Count,"Develop a Python function to calculate the sum of all positive even numbers up to q, where q is the count of white doves in the provided image.
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['8_5_0.png'],['https://i5.walmartimages.com/seo/Cornucopia-Artificial-White-Doves-6-Pack-White-Feathered-Mini-Birds-for-Weddings-Christmas-Ornaments-Wreaths-Decorative-Arts-and-Crafts_8a42b570-6d20-41ae-a97d-716339effa7a.0f4275aad43421dbb9c1aa3a2f82b2b7.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF'],[],Not Provided,freeform,"{
+   ""answer"": {
+             ""gt_answer"": 12, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+Count,"Formulate a Python program to determine the factorial of a variable x, which equates to the sum of chairs and tables in an image.
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['8_6_0.png'],"['https://bouncycastlenetwork-res.cloudinary.com/image/upload/f_auto,q_auto,c_limit,w_600/16e65c2b5d31228ff33de43e4187ab29']",[],Not Provided,freeform,"{
+   ""answer"": {
+             ""gt_answer"": 5040, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Count,"Programme a Python function to replicate an array ""spider_leg"" m times, wherein m corresponds to the number of legs in the provided spider image.""
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['8_7_0.png'],['https://preview.redd.it/can-anyone-identify-this-6-legged-spider-looking-thing-uk-v0-jwlxhwmty3a91.jpg?auto=webp&s=dccf309d3f3f757114683c84520ff738359c1940'],[],Not Provided,freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""spider_legspider_legspider_legspider_legspider_legspider_leg"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Count,"Count the number of characters in the title of the book in these two images that is written by the author who published the book with the longest title in 2000 as listed in the dataset. 
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```","['8_8_0.png', '8_8_12.png']","['https://m.media-amazon.com/images/I/51g0nswOQUL._SY445_SX342_.jpg', 'https://m.media-amazon.com/images/I/71jl-4JhwoL._SY522_.jpg']",['Books.csv'],https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset,freeform,"{
+   ""answer"": {
+             ""gt_answer"": 5, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Count,"Count the number of the superheroes in the image that belongs to the universe with higher total box office. 
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['8_9_0.png'],"['https://media.gq.com/photos/5e221ced11a867000824e294/16:9/w_2240,c_limit/story-SuperHeros7.jpg']",['dc_marvel_movie_performance.csv'],https://www.kaggle.com/datasets/mdtoomey/box-office-of-dc-and-marvel-superhero-movies,freeform,"{
+   ""answer"": {
+             ""gt_answer"": 2, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Count,"If patients are more than doctors in the image, find the county with the highest correlation between covid cases and deaths. Otherwise find the state. 
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['8_10_0.png'],['https://cdn.aarp.net/content/aarpe/en/home/caregiving/health/info-2018/find-best-doctor-hospital/_jcr_content/root/container_main/container_body_main/container_body1/container_body_cf/container_image/articlecontentfragment/cfimage.coreimg.50.932.jpeg/content/dam/aarp/home-and-family/caregiving/2017/09/1140-doctor-patient-caregiver-handling-hospitalization.jpg'],['us-counties.csv'],https://www.kaggle.com/datasets/fireballbyedimyrnmom/us-counties-covid-19-dataset,freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""Alabama"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Count,"What is the largest product of consecutive numbers in the list [10,5,-3,2,-6,8,-1,5,3,-2,-4,-8] if you are allowed to flip the sign of at most k elements in the list, where k is the number of non-transparent water bottles in the image.
+ Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['8_11_0.png'],"['https://hips.hearstapps.com/hmg-prod/images/gh-water-bottles-65c68157bbf46.png?crop=1.00xw:1.00xh;0,0&resize=1200:*']",[],Not Provided,freeform,"{
+   ""answer"": {
+             ""gt_answer"": 13824000, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Count,"The Collatz conjecture is a conjecture in mathematics that concerns a sequence defined as follows: start with any positive integer n. Then each term is obtained from the previous term as follows: if the previous term is even, the next term is one half the previous term. If the previous term is odd, the next term is 3 times the previous term plus 1. The conjecture is that no matter what value of n, the sequence will always reach 1 eventually.
+Write a function that returns the maximal number of steps it takes to reach 1 from the multiple of the number of finger in the hand shown in the image between 1 and 100.
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['8_12_0.png'],"['data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSExIWFhUWFRUWFxcSFxIVFRcXGBUWGRUXFRcYHSggGBolGxcVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0OGxAQGi0lHSUtLS0tLS0tLS0rKy0tLS0tLS0tLS0tLS0tKy0tLS0tLS0tLSstLS0tLS0tLS0rLS0tLf/AABEIANQA7gMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABQYDBAcCAf/EAD0QAAIBAgIGBwcCBQQDAQAAAAABAgMRBCEFEjFBUWEGInGBkbHBEzJCUqHR8GKCFCNyouEHkrLxY4PCFf/EABkBAQADAQEAAAAAAAAAAAAAAAACAwQBBf/EACMRAAIDAAICAgMBAQAAAAAAAAABAgMREiEEMSJBMlFhE3H/2gAMAwEAAhEDEQA/AO4gAAAAAAAAAAAAAAAAAA1dJYyNKm6ktitlxbdkvEgqenZye1Lkkn55kJTUfZbXTKa1FnBoaPx+v1Xt5bGb5JPSEouLxgAHSIAAAAAAAAAAAAAAAAAAAAAAAAAAAPFSooq7dlxZ7ZTNPaWft5Qbyg0kudk2+3MhOfFaW01OyWItUMdTbspea8zYRSsPidZbS06Jr61NX2rJ+n0OQs5Fl/j/AOa1G6ACwzFf6bxf8LJr4Zwf91vUpmjcQ7rMv/SijrYSsv0a3+1qXoc5wKMt35HqeE/g1/S4aKq/zIPnbxy9S0oo2j6jTXKz8C8osqfRn8yOSTPoALjGaelMcqNNzfYlxb2L84EJS01UlnrW5JK31Rr9N8T1qVNbk5vvdo+UiJwFTOxnsm+WI9Hx6Iuvk12XbRuO17p+8lftX55m+VrQkv5q/pZZS2D1GS+ChPEAATKQAAAAAAAAAAAAAAAAAD4zn3TnBOFdVF7tRf3Rsn9NX6nQiH6U6N9vQlFK8o9ePNrau9NrvK7I8ol3j2cLEyk6Nq2ZatB4q00t0su/d+cym6Od8iewUZJ5cnczQePT1LoqUWi8AxYarrRUvy+8ym08VrDxWpqUXF7Gmn3qxy3R1J6zVtnE6ozmsurWqL/yT/5sz3/Rt8N+0SOFw8rl1w0rxi+KXkVDDVMiz6JnemuTa9V5ip9nfL1pM3QAaDCUHpfO+KtwhBeb9TVoRtYzaVXtMVVnfLX1dnypRf1ie44V8TG+5Nns1NKtL+E10djepfhF+aX3LKQXRei0pyfFR8M35onTRX+J5vkvbGAAWFAAAAAAAAAAAAAI7S2k1RS3yley5La3y2EiUbp7GcasKnwShqclJOTafamvB8CE21HUXUQU5pMlqOmpt3y7LZfcnMLiVOOsu9b0zneAxtyf0Zj3CV929cV9yqFj+zXd4yz4rsth8PNKopJNO6eaPZoPOOd6VwvscVNWyb148LSzy79ZdxvYWtc3OnGE6tOqvheq+x5x+qf+4hcDLIxyXGTR6lUuVaZadDYrPV4+f/XkTZUMLUzLRhK+vFPufaX1S6wyeRDHyMzOeaRhbFVV+tvxz9Tohz7pG9XGT56r/tj9jl3pHfE/Jr+GzRlYsWhJ+8ux/f0K1GWV/wA/yTmhqnXjzTX0v6FdfUi+9bAnzDiq2pCU3sjFvwVzMQvS2vq4dr5pRj9bv6JmmTxaYIR5SSKhh7vN7W7vte0kINmnRmrLOxvU9hiR6+ln0JC1KPO7+v2SJAwYGNqcF+mPkZzbFYjyJvZNgAHSIAAAAAAAAAAAANPSmAhWpSpTWUlt3p7pLmmbgB1PO0ciqYedCrKlP3ovua3NcmiWw1d/nAtXSnQSxENaOVWHuPit8Hye7g+8pGjqjTantTtbg1tuZJx4s9Wq/wD0j/S66Bx3wS2P3W+L3d5PlHoVizaJx2stWXvLY+K+5bXPemY/Iqz5Iz6UwntaU6fzLLk1nF+KRz7A1bPVeTWWe1HSyh9KMH7LEa6yjU6y7dk142f7jly+zviy7cT3B2d7tk9ojEasrPZLz3P85FeoVk0b1CoVxljNM4co4y3FJ6X07YhPjCL705L0RcMFX14J79j7StdOKedKXKS/4tepdb3DTH4/VuEfQm7Ero+fXg/1LzsQeDqErh52z4O5RF9m6frC23Kr0wqqU6dLgnN9ryXk/EtSKJpOtr4mo9ylqr9vV80/EvtfxMPjR2e/o+ewuktq4M2qOGd4xW9pdl3YwQZK6EhrVU/lTffsXn9CmK14bZy4xbLIkfQDWeUAAAAAAAAAAAAAAAAAAfGindMdE6r/AImC4KovKfkn3cy5HirTUk4tXTTTT2NPaiM48lhOubhLUc6wVa6JPCYmzWdnu4kXpXBvC1XB+4+tB8V91sfc95kw803rbOf2Mq1ez0+prV6Lxo7HKorfEtq9VyNbpJo/21FpLrx60eOW1d69CHwuJtZp2a2P83FmwWJVSN9+9cH9i+MlNYzDZW6pKSOc4StbIlqFQ1+lOA9jW1kupUvJcn8S8c/3cjXwtVvYu/8ANpmax4b1JSipItuhsRaWrul5r/HkYOmtK9GL4VF4OMl52NLAydr3621f4N/pBWVTDZe9rQy331lf6XZensGjJKOWqSKxho5G7CbeR8wmGaRmcXfcVJGiTLbRrL2am9mqm/C7Oe0J6zcvmk2+15lgqaRfsnSttTTlvs3nlbhkaEcKtzJ2PcKqIOOnymiw9HKdoyfNLwz9UQipNFm0NC1Jc3J/V/Y7Wvkc8iXww3gAaDCAAAAAAAAAAAARen9KewpqW2Upasb7L2bbfYkyAwun6jec33qNvCxK9MdGSr0P5avOEteKy62TTXbZ/Q5vh8S1KzyabWd73W5pme2Ukz0PFrrlB77OoYHTUJZT6r4/D/glUzm2GxV0T2jNMSh1XnHg939L9PI7G39kLvFzuJbAauFx0J7HnweTNouT0xtNeyO07ouOIpODspLOEvll9tz7TnkXKnJ05q0k7NPidUK90r0J7aPtIL+ZFbviXy9vDw3lVsN7Xs0+PdwfF+ivUK5NaOxuq092x9n3KfQxFiVwlf4n/hfczxljNtkU1jLb0iwSrYeSWbS14c2ls71dd5TNE05bW8nmuwm//wBGajqxm0uGW/na6NFTW4sm1J6U0xlFOLNxRzPleqYI1DXxFW5HS5R7NyMz5OsatOqYp1BocTYdUyQkR/tMzJCocJJErTqZFj0S70o9/myq0aiZY9BVbwcflf0ez63Lq/Zk8lfEkwAXmEAAAA+ORC6Q6QQjlTtJ8fhX37vE45JeyUYOTxE1c8SrxTs5JPg2rlLr6WqVH1qjtwj1V2WW3vuYoNFTu/SNUfEf2y+Jn0qOA0h7N3Ty3rc1v7y2xZOM+RRbU62LFd6RdFYYjrwtCr83wy5TS8L7e3YWMEmk+mQjNxeo5LicNWw09WrBx4PbGX9Mlk/PkbWCxyeZ0vEYeE4uM4qUXtUkmn3MqOl+h1rzwz/9cn/wk/J+KM8qmvRuh5Sl1M16OI5knhNNSi7X1kt0vv8A9lQjiZU5OM04yW1STTXabtDGKXjtIKTXoulCM/ZfcJpKE8r6r4P0ZuFGpYklsJpaUMn1lwe3ufoXRt/Zks8bPxIPproj2c1ViupUl1rbp7+6Wb7b8TBo+Oqlk789pM6Z0u6i1dVKN03sbbWa7LMiYzRVLOWo0VcuCUjPVeWRpyqWZstX2GvVgRLV0eo1TDKfPeHwW3cfPYpHBp7jUGsYptIxO72uy4fc6NNpRue/4dsxUpG5Crkd6Icn9CjSktry5EzofEqM+Tyffsfj6kZGa4m1CF7cePLmt51PO0QlHksZcAaGAx8XFKUkpbM8r8HmbdWvGKvKSS5tI1JprTz3Fp4ZDXxeLhTV5O3Di+xETj+kCWVJX/U9nctr+hAVMRKUtaUm3xflyRXK1L0X1+O5dy6Rl6SacqTWrFWp7+L7eXJfUhIYm5I4qUbNXz9SBp1UpNKNrPn+WM0m29Z6FUYxWJEtCO8TqtGlLGEx0f0DOvac7xpbvmn/AE8Fz8L7SUVvSOzmoLZHrQ2AnXnvVOPvS/8Alc39PAviRjw1CMIqMIqMVkkjKaYQ4o8u652P+AAEykAAA0NKaHo11apC7WySykux+mwpOk+iVaheVG9SHBL+Yv2r3v258jop8ZCUFItrulD0cow2NttJKjjVxLVpzo5Sr3klqVPnitv9a+Lz5nO8fhKlGp7OorNZ8mtiae9P0ZnlBwN1d0bP+k5OV95qVE+4wYXFXN+yZWXroxUKjRnlPLyMMoPcZKFNrN7fI6RkxTp2vfaz6+JlcTxNfckVmGUE+0xTjY2YmLErLwOHTEpZHuFWx51Q6YCNmGINulXZH04fjN2lTOkniNmpXtmeda+wwzluMdKTTte+R3GR6MkoZ2MdVWNiclbM08TUOPo5rZr1ptbH+eBHToOpNKClKb2KKvfu9Sc0ZoKpiHre7T+Z7/6Vv7dnkXTRei6dCOrTjZvbJ5yl2v02Eo1uRXZeoevZWNBdDmmqmJtxVNZ/73v7FkXSMbH0GiMVH0Yp2Sm9YABIgAAAAAAAAACL0/oaGJhqyykvclvT58YvevUlD4zjW9HU2nqOOYnDzo1JQmrSi816p70+JIYTEXyLL/qBonXpqvFdanlK2+De3uf0bKPgq+rt2mSceLPTps5xLNTttMjVyOwuIub9KZzSxo9qB51D3CZlkkyRU9RqapjrU9nb6MzVcjWrTyXb6HCR41Tw2eatUxKpfYcOo2YVDPCtbeRkqj3HyNVnUdaJOpiVa5qYnEWcTDLst2M+Tppxs92fevxnWyHRkq4+2Td7rIlejeipYiWvO6pRfZrv5Vy4vu7PHR7QKxD1pXVOLztk5P5U9y2Xf4r/AEKUYRUYpKKVkkrJLkidde9souuz4xPsIJJJKyWSSySW5I9AGgxAAAAAAAAAAAAAAAAAAHirTUk4tXTTTT2NPamcg6Q6OeGrSp52TvF8YP3X6PmmdiKz060T7Wh7SKvOleXNw+NevdzK7I6i6mfGRz7B4jOxNYauVlSsyRwVcynpeyejXNqnMh4Vrm1SxJ3Trj0bOIf5+dxo1XdO27PwNiU7o04yszjIpYfJS5XPGouLXhtPNeoo5bnsNf2ueTXkwjhllCS5rivsfIVF2GKVZrO+z6dtjzOvv+vHvWTJA3FVM2jMJKvVjTj+58IrbL83tEYqt8lteVufJcTpPRjQ/wDD0usv5k7Ob224R7vO5KEeTKLbOKJTB4aNOEYQVoxVkvzeZgDUYAAAAAAAAAAAAAAAAAAAAAAfGj6ADlfTDQTw9TWgv5U31f0vfB+a5Zbiv0qtmdsxuEhVhKnOKlGSs0/zJ77nL+k/RmeGesrzot5S3xbeUZ2+j2PlsM1ledo20XfTI6liTYpYghdfVZs4apcpPQTROxrmri69szFFmSvHWiCMsEcVGStI06srN71x+/Mj6vUe1rszXgZOvJXi4v8Atf2OaVMyTxLT29jW3xPkMRf1S2dxqRo1HuS71b6XLF0M0br4qkpWsnrvnqq6/u1Tq7eEJPE2Wvof0WdNqvXXXt1IbdX9Uv1ct3bsuaPlj6bYxUViPOlJyesAAkRAAAAAAAAAAAAAAAAAAAAAAAABgxuFjUpypyV4zi4vvVjOGAcGxdBwnKnP3oSlF9sXZ92R8ozsWP8A1OwXs8TGoslWhd5fHC0ZPwdP6lPgm3nNpfpSXmYprHh6ddmxTJX+Kt37Etr7EbNCTfvO3JepqYWjFe6s+Lu2bCjK+eX5wIMnumevSVrqKPP8OmtlzLTa1bMzU/d2ETuGnBW2/csXQpr+Kjb5J+SIOrGxv9GK+piqT3OWq/3Jx82jtbySIWLYM6mAD0TywAAAAAAAAAAAAAAAAAAAAAAAAAAAAACh/wCqdFSjQb2qU13NRv5IotLCRvvAMtv5G2j8SQpUUrW9PsZo0E9rf0PoKS490sMuZtUKCs9v0ABIxOguezkFT1XrLandbNqaaAIg6tF5I+gHpHlAAAAAAAAAAAAH/9k=']",[],Not Provided,freeform,"{
+   ""answer"": {
+             ""gt_answer"": 112, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Count,"Find the number of distinct subsequences of the positive integers that sum up to the number of quadrilateral in the image. Subsequences with different orders are considered as different subsequences. 
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['8_13_0.png'],['https://www.recordherald.com/2021/03/05/getting-crafty-with-geometric-shapes/'],[],Not Provided,freeform,"{
+   ""answer"": {
+             ""gt_answer"": 32, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Count,"Determine the number of ways you can write the square of n as the sum of two prime numbers, where n is the number of axisymmetric geometry shapes in the image. The order of primes does not matter, and each pair should be counted only once.
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['8_14_0.png'],['https://www.recordherald.com/wp-content/uploads/2021/03/web1_diag1-1.jpg'],[],Not Provided,freeform,"{
+   ""answer"": {
+             ""gt_answer"": 1, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Count,"Compute the minimum number of perfect square numbers which sum up to n*(n+2), where n is the number of the wheels of the car shown in the image assuming it is a normal car. 
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['8_15_0.png'],['https://avtoros.com/en/shaman/config/img/slider/1200x640-2w.jpg'],[],Not Provided,freeform,"{
+   ""answer"": {
+             ""gt_answer"": 2, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Count,"Compute the number of trailing zeros in the factorial of the number of blocks in the image. We only count 1 by 1 square as one block. 
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['8_16_0.png'],['gpt'],[],Not Provided,freeform,"{
+   ""answer"": {
+             ""gt_answer"": 8, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+Count,"Recently, the tomatoes I planted have matured. 
+Only the completely red tomatoes like the one on the upper left in Figure 1 are ripe tomatoes.
+Please tell me, if I pick the ripe tomatoes in these three pictures, how much money can I make in total? The price of vegetables is recorded in the attached csv file.
+
+The answer should have 2 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""money"": your_answer,
+}
+```","['8_17_0.png', '8_17_12.png', '8_17_14.png']","['https://umbelorganics.com/wp-content/uploads/2019/08/ripening_tomatoes2.jpg', 'https://www.ruralsprout.com/wp-content/uploads/2019/09/ripen-tomatoes.jpg.webp', 'https://s.yimg.com/ny/api/res/1.2/OY7Nk8b68ptwIBGX5P_xJg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTkxMztjZj13ZWJw/https://media.zenfs.com/en/better_homes_gardens_articles_518/4f6ed399be5d89497714d93aba7bf10b']",['vegetable_prices.csv'],GPT4,freeform,"{
+   ""money"": {
+             ""gt_answer"": 2, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.01
+         }
+}",OK
+Count,"Please write a function is_perfect_number(n) that receives an integer n as input. Returns 1 if n is a perfect number; 0 if not.
+
+A perfect number is a positive integer that is equal to the sum of all its positive factors (excluding itself). For example, 28 is a perfect number because the sum of its factors 1, 2, 4, 7, and 14 is equal to 28.
+
+Then, please tell me what is_perfect_number(n) is equal to? n is the number of tomatoes in the picture.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""is_perfect_number"": your_answer,
+}
+```",['8_18_0.png'],['https://gardenerspath.com/wp-content/uploads/2020/05/How-to-Make-Tomatoes-Red-FB.jpg'],[],Not Provided,freeform,"{
+   ""is_perfect_number"": {
+             ""gt_answer"": 0, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",OK
+Count,"How many horses are there in the image? Please output all its prime factors in order from smallest to largest.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""prime_factors"": your_answer,
+}
+```",['8_19_0.png'],['https://cdn.mos.cms.futurecdn.net/2yp2prHE644qtfnN7EZRhC-1200-80.jpg.webp'],[],Not Provided,freeform,"{
+   ""prime_factors"": {
+             ""gt_answer"": [5], 
+             ""answer_type"": ""list_of_int"",
+             ""eval_method"": ""exact""}
+}",Hard
+Count,"Find the smallest integer such that starting from that integer, n consecutive integers are all composite numbers, where n is the number of pizza slices in the image.
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['8_20_0.png'],['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZFJH7CVFN0v23lcMcm2z58_Cx8hySUa9Imw&usqp=CAU'],[],Not Provided,freeform,"{
+   ""answer"": {
+             ""gt_answer"": 114, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Count,"The robot can only move either down or right at any point in time. Write a program to compute the number of steps needed for the robot to reach the finish point as shown in the image.
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['8_21_0.png'],['https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png'],[],Not Provided,freeform,"{
+   ""answer"": {
+             ""gt_answer"": 28, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+Landmark,"Find the population of the city where the landmark is from the sheet. Let me know what is the closest prime number of the population. 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""population"": your_answer,
+  ""closest_prime"": your_answer
+}
+```",['9_1_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Space_Needle_2011-07-04.jpg/500px-Space_Needle_2011-07-04.jpg'],['worldcities.csv'],https://www.kaggle.com/datasets/viswanathanc/world-cities-datasets/data,Freeform,"{
+   ""population"": {
+             ""gt_answer"": 3643765, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.0001 
+         },
+   ""closest_prime"": {
+             ""gt_answer"": 3643751, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.0001 
+         }}",OK
+Landmark,"By looking into the sheet, find the number of cities in the country where the landmark is.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""number_of_cities"": your_answer,
+}
+```",['9_2_0.png'],['https://upload.wikimedia.org/wikipedia/en/c/c1/Cloud_Gate_%28The_Bean%29_from_east%27.jpg'],['worldcities.csv'],https://www.kaggle.com/datasets/viswanathanc/world-cities-datasets/data,Freeform,"{
+   ""number_of_cities"": {
+             ""gt_answer"": 5768, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.0001 
+         }
+}",Easy
+Landmark,"By looking into the sheet, tell me what is the rank of the height of the building in the image.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""rank"": your_answer,
+}
+```",['9_3_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Central_Park_Tower_April_2021.jpg/500px-Central_Park_Tower_April_2021.jpg'],['skyscrapers.csv'],https://www.kaggle.com/datasets/mexwell/skyscraper-dataset,Freeform,"{
+   ""rank"": {
+             ""gt_answer"": 5, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.0001 
+         }
+}",OK
+Landmark,"By looking into the sheet, let me know how many years does it take to build the building in the image.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""number_of_years"": your_answer,
+}
+```",['9_4_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Aerial_view_Casino_Stratosphere_LAS_09_2017_4912.jpg/500px-Aerial_view_Casino_Stratosphere_LAS_09_2017_4912.jpg'],['skyscrapers.csv'],https://www.kaggle.com/datasets/mexwell/skyscraper-dataset,Freeform,"{
+ ""number_of_years"": {
+   ""gt_answer"": 2, 
+   ""answer_type"": ""float"",
+   ""eval_method"": ""exact"", 
+   ""tolerance"": 0.0001 
+   }
+}",OK
+Landmark,"The scenic spot in the picture was destroyed in a famous disaster movie. By looking into the sheet, let me know how many companies participated in the production of the movie.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""number_of_companies"": your_answer,
+}
+```",['9_5_0.png'],['http://i0.sinaimg.cn/lx/2012/0119/U5474P622DT20120119235905.jpg'],['tmdb_5000_movies.csv'],https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata,Freeform,"{
+ ""number_of_companies"": {
+   ""gt_answer"": 4, 
+   ""answer_type"": ""float"",
+   ""eval_method"": ""exact"", 
+   ""tolerance"": 0.0001 
+   }
+}",Hard
+Landmark,"There was a famous author who wrote a novel with the same name as the building in the picture. By looking into the sheet, let me know how many authors were influenced by the author.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""number_of_authors"": your_answer,
+}
+```",['9_6_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Notre-Dame_de_Paris_2013-07-24.jpg/198px-Notre-Dame_de_Paris_2013-07-24.jpg'],['authors.csv'],https://www.kaggle.com/datasets/choobani/goodread-authors,Freeform,"{
+ ""number_of_authors"": {
+ ""gt_answer"": 2, 
+ ""answer_type"": ""float"",
+ ""eval_method"": ""exact"", 
+ ""tolerance"": 0.0001 
+ }
+}",Easy
+Landmark,"By looking into the sheet, find the country where the happiness score is the 10th highest among all the countries. Then, calculate the difference in the health score between this country and the one where the landmark from the picture locates. Finally, determine what is the closest prime to 1009 times the difference. 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""closest_prime"": your_answer,
+}
+```",['9_7_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/600px-Kheops-Pyramid.jpg'],['2015.csv'],"https://github.com/InfiAgent/InfiAgent/blob/main/examples/DA-Agent/data/da-dev-tables/2015.csv
+",Freeform,"{
+ ""closest_prime"": {
+ ""gt_answer"": 317, 
+ ""answer_type"": ""float"",
+ ""eval_method"": ""exact"", 
+ ""tolerance"": 0.0001 
+ }
+}",OK
+Landmark,"Provided are an image of a famous ladmark of China and a data file about dynasties of China. Find which dynasty was the landmark firstly built. By looking into the data file, tell me how many years the dynasty lasts and what the rank of the lasting time of the dynastiy. 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""lasting_years"": your_answer,
+  ""rank"": your_answer
+}
+```",['9_8_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/500px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg'],['chinese_dynasties.csv'],自制,Freeform,"{
+ ""lasting_years"": {
+ ""gt_answer"": 15, 
+ ""answer_type"": ""float"",
+ ""eval_method"": ""exact"", 
+ ""tolerance"": 0.0001 
+ },
+ ""rank"": {
+ ""gt_answer"": 15, 
+ ""answer_type"": ""float"",
+ ""eval_method"": ""exact"", 
+ ""tolerance"": 0.0001 
+ }
+}",Hard
+Landmark,"Provided are a dataset about several famous landmarks and an image about a landmark. Find the complete year of the landmark in the dataset which locates in the same contry as the landmark in the image. Then, tell me whether or not the digit of the year can construct 24 point with basic arithmetic operations. The answer can only be one of ""yes"" or ""no"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""can_construct_24"": your_answer
+}
+```",['9_9_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Qutb_Minar_2011.jpg/400px-Qutb_Minar_2011.jpg'],['famous_landmarks.csv'],自制,Freeform,"{
+ ""can_construct_24"": {
+ ""gt_answer"": ""yes"", 
+ ""answer_type"": ""str"",
+ ""eval_method"": ""exact""}
+}",Hard
+Landmark,"Provided are an image of several landmarks and a sheet about cities in the world. For the five landmarks on the top of the image, by looking into the sheet, please let me know what is the total population of them. Only consider the English names of the cities. Note that if the city is not in the sheet, assume its population to be 0.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""total population"": your_answer
+}
+```",['9_10_0.png'],['https://m.media-amazon.com/images/I/61owCQ25xAL._SY522_.jpg'],['worldcities.csv'],https://www.kaggle.com/datasets/viswanathanc/world-cities-datasets/data,Freeform,"{ ""total population"": 
+  { ""gt_answer"": 35480922,  
+     ""answer_type"": ""float"",
+     ""eval_method"": ""exact"", 
+     ""tolerance"": 0.0001  
+  }
+}",Hard
+Landmark,"Attached are a sheet about several famous bridges and a picture of one of them. Calculate the mean and standard deviation of the bridges in the sheet. Then, assuming that their length follows Gaussian distribution, let me know what quantile the length of the bridge in the image lies. Your response should be in the format as follows. Keep two decimal places.
+
+Please return your final answer in a JSON format with the following schema (with two decimal places)
+```json 
+{
+  ""mean"": your_answer,
+  ""std"", your_answer,
+  ""quantile"": your_answer
+}
+```",['9_11_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Sydney_%28AU%29%2C_Harbour_Bridge_--_2019_--_2179.jpg/500px-Sydney_%28AU%29%2C_Harbour_Bridge_--_2019_--_2179.jpg'],['famous_bridges.csv'],自制,Freeform,"{ ""mean"": 
+  { ""gt_answer"": 1005.83,  
+     ""answer_type"": ""float"",
+     ""eval_method"": ""exact"", 
+     ""tolerance"": 0.01  
+  },
+  ""std"": 
+  { ""gt_answer"": 1107.67,  
+     ""answer_type"": ""float"",
+     ""eval_method"": ""exact"", 
+     ""tolerance"": 0.01  
+  },
+  ""quantile"": 
+  { ""gt_answer"": 0.55,  
+     ""answer_type"": ""float"",
+     ""eval_method"": ""exact"", 
+     ""tolerance"": 0.01  
+  }}",OK
+Landmark,"Attached are an image of a theme park and a sheet about several theme parks. For the theme park in the image, from the sheet, let me know what is the estimated number (billions) of the total visitors visiting the park with the same theme in 5 years.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""number (billion) of visitors"": your_answer
+}
+```",['9_12_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Cinderella_Castle_October_2021.jpg/500px-Cinderella_Castle_October_2021.jpg'],['theme_park.csv'],自制,Freeform,"{ ""number (billion) of visitors"": 
+  { ""gt_answer"": 0.4665,  
+     ""answer_type"": ""float"",
+     ""eval_method"": ""exact"", 
+     ""tolerance"": 0.0001  
+  }
+}",Hard
+Landmark,"Attached are a picture of a landmark and a sheet about several landmarks. Find the description of the landmark. Then, regardless of cases and white spaces, count the number of different character-level 3-grams of the description and find the 2-gram that appears for the most times. 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""number of 3-grams"": your_answer,
+""most common 2-gram"": your_answer
+}
+```",['9_13_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Machu_Picchu%2C_Peru.jpg/540px-Machu_Picchu%2C_Peru.jpg'],['famous_landmarks (1).csv'],自制,Freeform,"{ ""number of 3-grams"": 
+  { ""gt_answer"": 37,  
+     ""answer_type"": ""float"",
+     ""eval_method"": ""exact"", 
+     ""tolerance"": 0.0001  
+  },
+""most common 2-gram"": 
+{
+""gt_answer"": ""in"",  
+     ""answer_type"": ""str"",
+     ""eval_method"": ""exact""}
+}",OK
+Landmark,"Provided are an image of a building and a sheet about buildings around the world. By looking into the dataset, let me know the rank of the height of the building in the image among building with the same material and the same current status.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""rank"": your_answer
+}
+```",['9_14_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Empire_State_Building_%28aerial_view%29.jpg/500px-Empire_State_Building_%28aerial_view%29.jpg'],['skyscrapers.csv'],Not Provided,Freeform,"{ ""rank"": 
+  { ""gt_answer"": 2,  
+     ""answer_type"": ""float"",
+     ""eval_method"": ""exact"", 
+     ""tolerance"": 0.0001  
+  }
+}",OK
+Landmark,"Provided are an image of a famous landmark in Europe and a dataset about several landmarks in Europe. Calculate the average year established of the landmarks. If only century information is provided, then use the average year of the century. If no valid information is provided, then assume it to be 0. Then, calculate the absolute difference between the average and the year when the landmark in the image is established. Determine the root of closest perfect square to the difference. 
+
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""root of closest perfect square"": your_answer
+}
+```",['9_15_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Saint_Basil%27s_Cathedral_in_Moscow.jpg/440px-Saint_Basil%27s_Cathedral_in_Moscow.jpg'],['Provided_Landmarks_Dataset.csv'],GPT,Freeform,"{
+    ""root of closest perfect square"": {
+        ""gt_answer"": 31,
+        ""answer_type"": ""int"",
+        ""eval_method"": ""exact""
+    }
+}",OK
+Landmark,"What is the most popular product category for female members in the location indicated by the image. 
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['9_16_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/ShwedagonPagoda.jpg/516px-ShwedagonPagoda.jpg'],['supermarket_sales.csv'],https://www.kaggle.com/datasets/lovishbansal123/sales-of-a-supermarket,freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""Home and lifestyle"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""}
+}",Easy
+Landmark,"Referencing the attached table, what is the alma mater of the architect who designed this building?
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""alma_mater"": str
+}
+```",['9_17_0.png'],['https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Casa_Mil%C3%A0%2C_general_view.jpg/1200px-Casa_Mil%C3%A0%2C_general_view.jpg'],['architects_info.csv'],GPT,Freeform,"{
+    ""alma_mater"": {
+        ""gt_answer"": [""Escola Tècnica Superior d\""Arquitectura de Barcelona"",""Escola Tècnica Superior d'Arquitectura de Barcelona""],
+        ""answer_type"": ""str"",
+        ""eval_method"": ""either_ok""
+    }
+}",Easy
+Landmark,"Which one of these landmarks shown in the images was built by an architect shown in the table who was born before 1900. 
+Give me the name of the building as answer. 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""name_of_landmark"": str
+}
+```","['9_18_0.png', '9_18_12.png', '9_18_14.png', '9_18_16.png']","['https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Casa_Mil%C3%A0%2C_general_view.jpg/1200px-Casa_Mil%C3%A0%2C_general_view.jpg', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQasV1HJUS_ZHo1VW46Js3kfG_NVDBlAzyUx3XaRpre-HZhaSQeRzHQciQcinu3s4Z-OhM&usqp=CAU', 'https://upload.wikimedia.org/wikipedia/en/c/c1/Cloud_Gate_%28The_Bean%29_from_east%27.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Empire_State_Building_%28aerial_view%29.jpg/500px-Empire_State_Building_%28aerial_view%29.jpg']",['architects_info.csv'],GPT,Freeform,"{
+    ""name_of_landmark"": {
+        ""gt_answer"": ""Casa Milà"",
+        ""answer_type"": ""str"",
+        ""eval_method"": ""fuzzy""
+    }
+}",OK
+Landmark,"Determine the landmark shown in the image, and answer with the year when it was built.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""year_built"": int
+}
+```",['9_19_0.png'],['https://static.planetminecraft.com/files/image/minecraft/project/2022/538/15827833-thschuttnotredame-shot-outv-aerial-x-l_l.webp'],['cathedrals_worldwide.csv'],GPT,Freeform,"{
+    ""year_built"": {
+        ""gt_answer"": 1163,
+        ""answer_type"": ""int"",
+        ""eval_method"": ""exact""
+    }
+}",Easy
+ArtWork,"Provided are an image and a csv file that contain pieces of trading information of the popular bored-ape-yacht-club NFT collection. Particularly, the image contains a grid of ape images, with item ID, current price, and last sales information listed underneath each. The csv file contains the current price, best offer, last sales, and time listed for each item in the image, but the item ID is not present. Your job is to match the csv file and the image and output the item ID of the most recently listed NFT as a string.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""NFT_ID"": your_answer,
+}
+```",['10_1_0.png'],['https://opensea.io/collection/boredapeyachtclub'],['tos-snapshot.csv'],https://opensea.io/collection/boredapeyachtclub,Freeform,"{
+   ""NFT_ID"": {
+             ""gt_answer"": ""6957"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+ArtWork,"Provided is Tchaikovsky's string quartet No 1. Assuming that the tempo is 60bpm, and the music starts at t=0s, at what time should the contrabass start playing?
+
+The response should belong to the unit of seconds and be accurate to two significant figures. 
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""time_for_contrabass"": your_answer,
+}
+```",['10_2_0.png'],['https://www.ovationpress.com/images/Product/large/758.jpg'],[],Not Provided,Freeform,"{
+   ""time_for_contrabass"": {
+             ""gt_answer"": 17, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.01 
+         }
+}",OK
+ArtWork,"Provided are an image and a csv file that contain pieces of trading information of the popular bored-ape-yacht-club NFT collection. Particularly, the image contains a grid of ape images, with item ID, current price, and last sales information listed underneath each. The csv file contains the current price, best offer, last sales, and time listed for each item in the image, but the item ID is not present. Your job is to match the csv file and the image, identify the item ID of the most recently listed NFT, and use its 4 digits (pad 1 in front if less than 4 digits) to calculate 24. Write your answer as a string. For example, if the item ID is 1234, then your answer should be ""1 * 2 * 3 * 4"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""24_string"": your_answer,
+}
+```",['10_3_0.png'],['https://opensea.io/collection/boredapeyachtclub'],['tos-snapshot.csv'],https://opensea.io/collection/boredapeyachtclub,Freeform,"{
+   ""24_string"": {
+             ""gt_answer"": ""(7-5)*9+6"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+ArtWork,"In the given photo are 4 well-known Egyptian gods and goddesses, with their names provided underneath each of them. Write a python code block to find out the least number of pairwise swaps needed to rank them in alphabetical order from left to right.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""num_swap"": your_answer,
+}
+```",['10_4_0.png'],['https://media.istockphoto.com/id/1222783934/vector/illustrations-of-the-gods-of-ancient-egypt-isis-ra-osiris-and-anubis.jpg?s=612x612&w=0&k=20&c=ikpg7O7zGOKVniZ_I1u6cjjTVuQV9HoucCKqq_q5GSc='],[],Not Provided,Freeform,"{
+   ""num_swap"": {
+             ""gt_answer"": 2, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+ArtWork,"Analyze the given music pieces and the music tempo sheet, find out the difference between the fastest and slowest possible tempo for these pieces.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""tempos_difference"": your_answer,
+}
+```",['10_5_0.png'],['https://musescore.com/static/musescore/scoredata/g/02ba8d22ee91a4f882dbe02376551cced920eec0/score_0.svg?no-cache=1634224399'],['musical_tempos_corrected.csv'],https://en.wikipedia.org/wiki/Tempo,Freeform,"{
+   ""tempos_difference"": {
+             ""gt_answer"": 116, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+ArtWork,"Provided are a snippet of Mozart's KV265, and a music note's frequency chart. Calculate the sum of the frequencies of the notes in the first four bars.
+
+The answer should have 2 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""sum_of_frequency"": your_answer,
+}
+```",['10_6_0.png'],['https://upload.wikimedia.org/score/n/p/npe7z3vnuj6zecwwtnig06wesetijfv/npe7z3vn.png'],['music_notes.csv'],https://mixbutton.com/mixing-articles/music-note-to-frequency-chart/,Freeform,"{
+   ""sum_of_frequency"": {
+             ""gt_answer"": 4785.93, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.01 
+         }
+}",Hard
+ArtWork,"Provided are a snippet of Mozart's KV265, and a music note's frequency chart. Calculate the total number of cycles the sounding instrument would vibrate playing the first four bars if the piece is to be played at the slowest speed of Allegro.
+
+The answer should have 2 significant digits.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""sum_of_cycle"": your_answer,
+}
+```",['10_7_0.png'],['https://upload.wikimedia.org/score/n/p/npe7z3vnuj6zecwwtnig06wesetijfv/npe7z3vn.png'],"['music_notes.csv', 'musical_tempos_corrected.csv']",https://mixbutton.com/mixing-articles/music-note-to-frequency-chart/,Freeform,"{
+   ""sum_of_cycle"": {
+             ""gt_answer"": 2523.78, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.01 
+         }
+}",Hard
+ArtWork,"Decipher the image accoriding to code in csv file
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['10_8_0.png'],['https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/victory-morse-code-2-art-by-linda-woods-linda-woods.jpg'],['morse_code (1).csv'],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""Victory"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""}
+}",Easy
+ArtWork,"Help me understand this in a programmer's way. Write code if need.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['10_11_0.png'],['https://i.pinimg.com/736x/44/3c/70/443c70d9cdb7ba2cc983cc2dbe1d5e4c.jpg'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""Geek"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""}
+}",Easy
+ArtWork,"My father give this bracelet to me, and give me this code book. He gives me hint that this is a short phrase of 3 words. What does he mean
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['10_12_0.png'],['https://i.pinimg.com/474x/e5/73/a5/e573a544e1eb4712bfbe98e058c18732.jpg'],['morse_code (1).csv'],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""Never Give Up"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""}
+}",Hard
+ArtWork,"Here is the translated content:
+
+Given this uploaded image, I wrote a function that uses the Sobel operator for edge detection and returns a binarized (containing only black and white colors) edge image.
+
+```python
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+
+# Function to perform edge detection using the Sobel operator
+def edge_detection(image_path):
+    # Read the image
+    image = cv2.imread(image_path, 0)  # 0 indicates that image is read in grayscale
+    # Perform Sobel edge detection
+    sobelx = cv2.Sobel(image, cv2.CV_64F, 1, 0, ksize=5)
+    sobely = cv2.Sobel(image, cv2.CV_64F, 0, 1, ksize=5)
+    # Combine the horizontal and vertical edges
+    sobel_combined = np.sqrt(sobelx**2 + sobely**2)
+    # Normalize and threshold to get a binary image
+    sobel_normalized = cv2.normalize(sobel_combined, None, 0, 255, cv2.NORM_MINMAX)
+    _, sobel_edges = cv2.threshold(sobel_normalized, [CHOICE], 255, cv2.THRESH_BINARY)
+    return sobel_edges
+```
+
+Now, I need to determine the threshold value at ""[CHOICE]"" for my uploaded image. Which of the following threshold values is more suitable for my uploaded image? (A) 50 (B) 200 (C) 500
+
+The answer can only be one of ""(A)"", ""(B)"", ""(C)"" or ""(D)"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['10_13_0.png'],['https://rusmuseumvrm.ru/data/collections/drawings/orlovskiy_a._o._golova_loshadi._1807._r-6256/19062_mainfoto_01.jpg'],[],Not Provided,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""(A)"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+ArtWork,"Please find the artwork with the longest time span from the attached csv file based on the 'Object Begin Date' and 'Object End Date' columns. Combined with its related information, is it the item in the picture I attached?
+
+The answer can only be one of ""Yes"" or ""No"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['10_14_0.png'],['https://store.mymodernmet.com/cdn/shop/products/brief-history-mug-1_450x500.jpg?v=1554697680'],['MetObjects_first_10k.csv'],https://www.kaggle.com/datasets/lukemarcusbarry/metobjects截取了前1000条。,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""No"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+ArtWork,"Please determine whether the phenomenon in the picture is consistent with the phenomenon in the code. 
+import threading
+
+lock1 = threading.Lock()
+lock2 = threading.Lock()
+
+def thread1():
+    while True:
+        with lock1:
+            with lock2:
+                print(""Thread 1 acquired both locks"")
+
+def thread2():
+    while True:
+        with lock2:
+            with lock1:
+                print(""Thread 2 acquired both locks"")
+
+t1 = threading.Thread(target=thread1)
+t2 = threading.Thread(target=thread2)
+t1.start()
+t2.start()
+
+
+I provide you four options, each option includes: ""phenomenon"" (indicating the phenomenon in the image), ""Yes/No"" (indicating whether the phenomenon in the picture is consistent with the phenomenon in the code).
+
+(A) deadlock, yes (B) deadlock, no (C) starvation, yes (C) starvation, no (D) race condition, yes (E) race condition, no
+
+The answer can only be one of ""(A)"", ""(B)"", ""(C)"", ""(D)"" or ""(E)"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['10_15_0.png'],['https://upload.wikimedia.org/wikipedia/en/b/ba/DrawingHands.jpg?20100309203309'],[],Not Provided,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""(A)"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+ArtWork,"How many rabbits are there in the picture (denoted as x), how many rabbit ears are there in total (denoted as y), and how many ears each rabbit has (denoted as z).
+Now, based on $x, y, z$, evaluate the following expression by writing code:
+$$
+f(x, y, z) = \sum_{i=1}^{x} i^2 + \sum_{j=1}^{y} \left\lfloor \frac{z}{j} \right\ rfloor
+$$
+Among them, $\left\lfloor \cdot \right\rfloor$ means rounding down.
+Finally, tell me what $f(x, y, z) $ is equal to?
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""function_res"": your_answer,
+}
+```",['10_16_0.png'],['https://upload.wikimedia.org/wikipedia/commons/3/3c/Paderborner_Dom_Dreihasenfenster.jpg'],[],Not Provided,Freeform,"{
+   ""function_res"": {
+             ""gt_answer"": 17, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0.0001 
+         }
+}",Easy
+ArtWork,"The idea reflected in the picture is closer to which of the following code snippets?
+
+(A) def func1(n):
+    if n == 1:
+        return 1
+    else:
+        return n * func1(n-1)
+
+(B) def func2(n):
+    result = 1
+    for i in range(1, n+1):
+        result *= i
+    return result
+
+The answer can only be one of ""(A)"" or ""(B)"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['10_17_0.png'],['https://files.oaiusercontent.com/file-AHi7Mj0ovSMh8QZWxRr4esPm?se=2024-03-27T15%3A26%3A24Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D299%2C%20immutable&rscd=attachment%3B%20filename%3Dimage.png&sig=d9SgFs5R9s3dcgrpqYQ7UprLhUbYiEcI5hVnSOBWWGE%3D'],[],Not Provided,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""(A)"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+ArtWork,"Please find three people in the picture: the person with the green background in the first row, the person in the middle in the second row, and the person to the left of John Lennon.
+
+Then, based on the csv file, please calculate how old they will be in 2024 (if the character has died, their age is equal to their age at the time of death)
+
+Finally, calculate the least common multiple of the ages of these three people.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""least_common_multiple"": your_answer,
+}
+```",['10_18_0.png'],['http://img.cnarts.net.cn/cweb/news/2017-05/2017-05-25/2017-05-25_20315518.jpg'],['people_data.csv'],GPT4,Freeform,"{
+   ""least_common_multiple"": {
+             ""gt_answer"": 7200, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""}
+}",Hard
+ArtWork,"Write a python function choose_time(a,b,c) to choose the time that closer to a from b and c. Provide the output of choose_time(a,08:00,02:00), where a is the time on the leftmost clock in the painiting. The answer can only be one of  ""08:00"",  ""02:00"". Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['10_20_0.png'],['https://upload.wikimedia.org/wikipedia/zh/d/dd/The_Persistence_of_Memory.jpg?download'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""08:00"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+ArtWork,"Tom got a list of number indicating the areas of the cubes in the provided painting, but didn't know the correspondence between the number and the cubes. Write a python code find_area(list), whose output is the areas of the red cubes and the blue cubes. Assume that the list is [2,7,2,8,9,4,16], what is the output of the written code? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""area of red cube"": your_answer,
+   ""area of blue cube"": your answer,
+}
+```",['10_21_0.png'],['https://upload.wikimedia.org/wikipedia/commons/a/a4/Piet_Mondriaan%2C_1930_-_Mondrian_Composition_II_in_Red%2C_Blue%2C_and_Yellow.jpg?download'],[],Not Provided,Freeform,"{
+   ""area of red cube"": {
+             ""gt_answer"": 16, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0
+         },
+    ""area of blue cube"": {
+             ""gt_answer"": 4, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0
+         }}",OK
+ArtWork,"Write a python code to check whether the input is a prime. Count the number of red cunes in the image and take the number as the input of your written code. What is the output of the code? The answer can only be one of ""Yes"",  ""No"". Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['10_22_0.png'],['http://tiebapic.baidu.com/forum/w%3D580/sign=b0fc99e653ce36d3a20483380af33a24/78959f3df8dcd10051e89d1d348b4710b9122f6c.jpg?tbpicau=2024-04-19-05_53e8be94234fccbbc0848f6ed2ac8b47'],[],Not Provided,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""Yes"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+ArtWork,"Tom made a questionaire to see who is the most popular painter. The results is provide the in the attached file. How many students choose the painter of the iamges as their favourite painter? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""number"": your_answer,
+}
+```",['10_23_0.png'],['https://m.media-amazon.com/images/I/81u17600-9S._AC_SX679_.jpg'],['Q24.csv'],自制,Freeform,"{
+   ""number"": {
+             ""gt_answer"": 13, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact"", 
+             ""tolerance"": 0
+         }
+}",Easy
+OCR,"You are given a data structure shown in the image. At the beginning there is a pointer pointing to the head. Perform the following until there is only one element left in the data structure: move the pointer following the arrow for `x` steps where `x` is the value of the element pointed by the pointer, then delete the element pointed by the pointer after moving, and further move the pointer for one step following the arrow. Finally, output the value of the only element left as an integer.
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['11_1_0.png'],['https://media.geeksforgeeks.org/wp-content/uploads/CircularLinkeList.png'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 5, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+OCR,"The mobile phone in the image corresponds to a unique phone data in the dataset. What is the star rating of the phone?
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['11_2_0.png'],['https://i.ebayimg.com/images/g/BmwAAOSwcQRlhhFM/s-l1600.jpg'],['apple_products.csv'],https://www.kaggle.com/datasets/komalkhetlani/apple-iphone-data,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 4.5, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+OCR,"The image shows the calendar of a month of a particular non-leap year. The previous year was a non-leap year. Which day of the week was August 2 of the previous year? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['11_3_0.png'],['https://github.com/declare-lab/LLM-PuzzleTest/tree/master/AlgoPuzzleVQA/data/images'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""Sunday"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+OCR,"Find the serial number and the size of the mac shown in this screenshot, and then write a python code to find the least common multiple of the screen size of this mac and the number of integer digits of its serial number. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['11_4_0.png'],['guoyin电脑截图'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 16, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+OCR,"First guess the missing number of the part denoted with a question mark. Starting from the left-top circle, construct a sequence with all the numbers in each circle clock-wise, use each number only once including the one you just guessed. Write a python code to calculate all its 3-digit substring sum. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['11_5_0.png'],['https://raw.githubusercontent.com/declare-lab/LLM-PuzzleTest/master/PuzzleVQA/data/images/circle_size_number/circle_size_number_0000.png'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 1335, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+OCR,"Guess the the missing number of the part denoted with a question mark. Starting from the top middle number and going clock-wise, combine every two numbers to form a new two-digit number. Note that each number can only be used once. Then write a python code to determine whether these two-digit number are prime numbers and output the count of prime numbers. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['11_6_0.png'],['https://raw.githubusercontent.com/declare-lab/LLM-PuzzleTest/master/PuzzleVQA/data/images/color_number_hexagon/color_number_hexagon_0000.png'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 1, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+OCR,"Guess the the missing number of the part denoted with a question mark. After completing the missing number, sum up the numbers in each row to get three sums and use them as the length of each edge to construct a triangle. Write a python code to calculate its area and round the it to two-digit precision. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""area"": your_answer,
+}
+```",['11_7_0.png'],['https://raw.githubusercontent.com/declare-lab/LLM-PuzzleTest/master/PuzzleVQA/data/images/polygon_sides_number/polygon_sides_number_0000.png'],[],Not Provided,Freeform,"{
+   ""area"": {
+             ""gt_answer"": 49.16, 
+             ""answer_type"": ""float"",
+             ""eval_method"": ""exact"",
+             ""tolerance"": 0.01
+         }
+}",Hard
+OCR,"Based on the shape of each piece and its size indicated by the number, first guess the number denoted by the question mark. Use all these numbers including the one you just guessed to form a string s. Write a python code to reverse the first k characters for every 2k characters counting from the start of the string. If there are fewer than k characters left, reverse all of them. If there are less than 2k but greater than or equal to k characters, then reverse the first k characters and leave the other as original. k=2 in this case. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['11_8_0.png'],['https://raw.githubusercontent.com/declare-lab/LLM-PuzzleTest/master/PuzzleVQA/data/images/rectangle_height_number/rectangle_height_number_0019.png'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 1223131, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",Hard
+OCR,"Here is a receipt of a credit card payment. The Bank Identification Number (BIN) takes up to six digits at the start of the credit card number. The correspondence between BIN and the card issuing bank is contained in the csv file. Which bank issued the credit card used for this payment? Is this bank still active? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""bank"": your_answer,
+  ""active"": your_answer (boolean),
+}
+```",['11_9_0.png'],['http://www.comtechsolutions.com/help/visioncore_howto/hmfile_hash_a65c68b5.png'],['credit_card_bin_data.csv'],https://neapay.com/post/bin-list-range-for-mastercard-visa-amex-diners-discover-jcb-cup_94.html,Freeform,"{
+ ""bank"": {
+ ""gt_answer"": ""Discover Card"", 
+ ""answer_type"": ""str"",
+ ""eval_method"": ""exact""},
+ ""active"": {
+ ""gt_answer"": true, 
+ ""answer_type"": ""bool"",
+ ""eval_method"": ""exact""}
+}",OK
+OCR,"The photo contains the VIN number of a car. The first three digits of the VIN number is called World Manufacturer Identifier (WMI). The correspondence between WMI and the name of the manufacturer can be found in the csv file. Which manufacturer produced this car? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""manufacturer"": your_answer,
+}
+```",['11_10_0.png'],['https://www.suncoastparts.com/mm5/graphics/00000002/porsche%20vin%20decode%20decoder.jpg'],['wmi.csv'],https://en.wikipedia.org/wiki/Vehicle_identification_number,Freeform,"{
+   ""manufacturer"": {
+             ""gt_answer"": ""Porsche"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+OCR,"Which of the following code can generate the content of the image? A: ""import re\nresult=re.findall(r'(\w+)=(\d+)', 'The date for today=28 and the date for tomorrow=1')\nprint(result)""; B: ""import re\nresult=re.findall(r'(\w+)=(\d+)', 'The date for today=28 and the date for tomorrow=29')\nprint(result)""; C. ""import re\nresult=re.findall(r'(\w+)=(\d+)', 'The date for today=28 and the date for tomorrow is 1')\nprint(result)""; D. ""import re\nresult=re.findall(r'(\w+)=(\d+)', 'The date for today=0 and the date for tomorrow=1')\nprint(result)"". The answer can only be one of ""A"", ""B"", ""C"" or ""D"".
+
+Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['11_11_0.png'],['自制'],[],Not Provided,Multi-choice,"{
+   ""answer"": {
+             ""gt_answer"": ""A"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""exact""
+         }
+}",Easy
+OCR,"There are many cones with ice cream scoops in the picture. However, there is one lollipop among them. Based on the color of this lollipop, find its flavor and calories in the given csv file. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""flavor"": your_answer,
+  ""calories"": your_answer,
+}
+```",['11_12_0.png'],['https://www.milenio.com/uploads/media/2021/07/14/paleta-escondida-entra-monton-helados.jpg'],['lollipop_data.csv'],自制,Freeform,"{
+ ""flavor"": {
+ ""gt_answer"": ""Strawberry"", 
+ ""answer_type"": ""str"",
+ ""eval_method"": ""exact""},
+ ""calories"": {
+ ""gt_answer"": 105, 
+ ""answer_type"": ""float"",
+ ""eval_method"": ""exact""}
+}",Hard
+OCR,"The 24 puzzle is an arithmetical puzzle in which the objective is to find a way to manipulate four integers so that the end result is 24. Solve the Puzzle of 24 challenge using the four cards given in the image. Please return the expression in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+``` 
+where your answer should be in string format, e.g., '1*2*3*4'",['11_13_0.png'],['https://play-lh.googleusercontent.com/RjuSCRJB1SxfxIiiPpNs0J9wrwB1nSsA7IeuhpYnSmD7bBm2JrToDq-aVp_g0-iPVw'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": ""(10-6-2)*12"", 
+             ""answer_type"": ""str"",
+             ""eval_method"": ""execution_exp""
+         }
+}",Hard
+OCR,"Write a code to calculate the diameter of the tree shown in the image.  The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.
+The length of a path between two nodes is represented by the number of edges between them.
+
+The answer should be an integer. Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""answer"": your_answer,
+}
+```",['11_14_0.png'],['自制'],[],Not Provided,Freeform,"{
+   ""answer"": {
+             ""gt_answer"": 5, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK
+OCR,"Peter took a test and his exam answer sheet is shown in the picture. The correct answer for the multiple choice test is contained in the csv file. How many points did he get? Please return your final answer in a JSON format with the following schema 
+```json 
+{
+  ""points"": your_answer (integer),
+}
+```",['11_15_0.png'],['https://cdn11.bigcommerce.com/s-wpgom64n7v/images/stencil/1280x1280/products/14757/58378/Airports_and_Hotels_Multiple_Choice_Exam_Worksheet_Answer_Key_And_Sheets_03__62434.1593525267.jpg?c=2&imbypass=on'],['correct_answers.csv'],GPT4,Freeform,"{
+   ""points"": {
+             ""gt_answer"": 20, 
+             ""answer_type"": ""int"",
+             ""eval_method"": ""exact""
+         }
+}",OK

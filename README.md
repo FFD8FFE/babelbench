@@ -28,12 +28,12 @@ BabelBench
 
 ## Files
 The dataset includes the following files:
-- `data/benchmark_random100.csv`: The CSV file containing the questions, annotations and the meta information.
+- `data/benchmark.csv`: The CSV file containing the questions, annotations and the meta information.
 - `data/000-csvs`: The table files used in the benchmark.
 - `data/000-imgs`: The images used in the benchmark.
 
 ## Data Format
-The `benchmark_random100.csv` file contains the following columns:
+The `benchmark.csv` file contains the following columns:
 - `tag` (string): The subcategory of the problem.
 - `prompt` (string): The problem with the response format constraints.
 - `imgs` (list[string]): The image names to solve the problem.
